@@ -107,36 +107,38 @@ a{color:inherit}
 /* =========================================================
    HERO · amanhecer no mar
    ========================================================= */
-.hero{position:relative;min-height:100svh;overflow:hidden;color:#fff;
-  background:linear-gradient(180deg,#0a1430 0%,#12275a 30%,#2c3f7c 48%,#7a6f95 58%,#d79a7e 65%,#f0c27d 70%,#f6dca4 71.5%)}
-.stars{position:absolute;inset:0 0 30% 0}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;color:#fff;background:#0b1636;--sun:min(240px,46vw,32vh)}
+.hero-sky{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;overflow:hidden;
+  padding-bottom:calc(var(--sun) * .62 + 28px);
+  background:linear-gradient(180deg,#0a1430 0%,#12275a 38%,#2c3f7c 60%,#7a6f95 75%,#d79a7e 88%,#f0c27d 97%,#f6dca4 100%)}
+.stars{position:absolute;inset:0 0 25% 0}
 .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 3s ease-in-out infinite}
 @keyframes twinkle{50%{opacity:.1}}
-.sun{position:absolute;left:50%;top:71%;width:min(240px,46vw);aspect-ratio:1;border-radius:50%;
-  transform:translate(-50%,-10%);
+.sun{position:absolute;left:50%;bottom:0;width:var(--sun);aspect-ratio:1;border-radius:50%;
+  transform:translate(-50%,85%);
   background:radial-gradient(circle,#fff6d8 0%,#f8dc9a 40%,#f0b86a 70%,rgba(240,184,106,0) 72%);
   box-shadow:0 0 120px 50px rgba(246,201,128,.45);transition:transform 4.5s cubic-bezier(.2,.6,.2,1)}
-.hero.risen .sun{transform:translate(-50%,-62%)}
-.sea{position:absolute;left:0;right:0;bottom:0;top:71.5%;background:linear-gradient(180deg,#25407a 0%,#14295a 35%,#0b1636 100%);overflow:hidden}
-.glints{position:absolute;left:50%;top:0;width:min(220px,42vw);height:100%;transform:translateX(-50%);
+.hero.risen .sun{transform:translate(-50%,40%)}
+.sea{position:relative;height:clamp(140px,24vh,260px);background:linear-gradient(180deg,#25407a 0%,#14295a 35%,#0b1636 100%);overflow:hidden}
+.glints{position:absolute;left:50%;top:0;width:calc(var(--sun) * .9);height:100%;transform:translateX(-50%);
   background:repeating-linear-gradient(180deg,rgba(248,220,154,.75) 0 2px,transparent 2px 9px);
   -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);
   opacity:.7;animation:glint 3s ease-in-out infinite}
 @keyframes glint{50%{opacity:.35;transform:translateX(-50%) scaleX(.82)}}
 .wave{position:absolute;left:0;width:200%;height:60px;animation:wave linear infinite}
 .wave svg{width:100%;height:100%}
-.wave.w1{top:6%;animation-duration:22s;opacity:.55}
-.wave.w2{top:30%;animation-duration:16s;opacity:.7}
-.wave.w3{top:58%;animation-duration:11s}
+.wave.w1{top:4%;animation-duration:22s;opacity:.55}
+.wave.w2{top:28%;animation-duration:16s;opacity:.7}
+.wave.w3{top:56%;animation-duration:11s}
 @keyframes wave{to{transform:translateX(-50%)}}
-.hero-inner{position:relative;z-index:3;text-align:center;padding:calc(env(safe-area-inset-top) + 8vh) 16px 0}
+.hero-inner{position:relative;z-index:3;text-align:center;padding:calc(env(safe-area-inset-top) + clamp(36px,7vh,90px)) 16px 0}
 .hero .caps{color:var(--gold-l);font-size:11px;letter-spacing:.38em}
-.hero .mark{width:min(230px,52vw);margin:20px auto 0;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
+.hero .mark{width:min(230px,52vw,24vh);margin:clamp(12px,2.4vh,20px) auto 0;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
 .hero .brand{font:600 clamp(15px,3.6vw,20px)/1 var(--caps);letter-spacing:.5em;margin:12px -.5em 0 0;color:#f6efe0}
-.hero h2{font:300 clamp(30px,5.2vw,50px)/1.05 var(--serif);margin-top:28px;color:#fbf6ec}
+.hero h2{font:300 clamp(30px,min(5.2vw,6.2vh),50px)/1.05 var(--serif);margin-top:clamp(14px,3vh,28px);color:#fbf6ec}
 .hero h2 .script{display:block;font-size:2.1em;margin-top:-.02em;line-height:1.1;padding:0 .1em}
-.hero .lead{font:italic 400 clamp(17px,2.2vw,21px) var(--serif);color:rgba(255,255,255,.85);margin-top:4px}
-.plane{position:absolute;z-index:2;top:0;left:0;width:100%;height:72%;pointer-events:none}
+.hero .lead{font:italic 400 clamp(17px,2.2vw,21px) var(--serif);color:rgba(255,255,255,.88);margin-top:4px;text-shadow:0 1px 8px rgba(10,20,48,.5)}
+.plane{position:absolute;z-index:2;inset:0;width:100%;height:100%;pointer-events:none}
 .scroll-cue{position:absolute;z-index:4;left:50%;bottom:26px;transform:translateX(-50%);text-align:center;color:rgba(255,255,255,.7)}
 .scroll-cue .caps{font-size:9px;color:inherit;letter-spacing:.34em}
 .scroll-cue i{display:block;width:1px;height:38px;margin:8px auto 0;background:linear-gradient(var(--gold-l),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
@@ -473,27 +475,29 @@ footer .script{display:block;font-size:32px;color:#fff;margin-top:12px;opacity:.
 <main>
 <!-- ================= HERO ================= -->
 <section class="hero" id="hero">
-  <div class="stars" id="stars"></div>
-  <svg class="plane" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M-60 420 C 300 250, 900 120, 1520 170" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-dasharray="2 7"/>
-    <g color="#fff" opacity=".9">
-      <use href="#i-plane" width="20" height="20" x="-10" y="-10" transform="rotate(90)"/>
-      <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" path="M-60 420 C 300 250, 900 120, 1520 170"/>
-    </g>
-  </svg>
-  <div class="sun"></div>
-  <div class="sea">
-    <div class="glints"></div>
-    <div class="wave w1"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q90 10 180 30 T360 30 T540 30 T720 30 T900 30 T1080 30 T1260 30 T1440 30 V60 H0Z" fill="#2a477f"/></svg></div>
-    <div class="wave w2"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q60 14 120 30 T240 30 T360 30 T480 30 T600 30 T720 30 T840 30 T960 30 T1080 30 T1200 30 T1320 30 T1440 30 V60 H0Z" fill="#1a3266"/></svg></div>
-    <div class="wave w3"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q120 8 240 30 T480 30 T720 30 T960 30 T1200 30 T1440 30 V60 H0Z" fill="#0f2150"/></svg></div>
-  </div>
+  <div class="hero-sky">
+    <div class="stars" id="stars"></div>
+    <svg class="plane" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M-60 420 C 300 250, 900 120, 1520 170" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-dasharray="2 7"/>
+      <g color="#fff" opacity=".9">
+        <use href="#i-plane" width="20" height="20" x="-10" y="-10" transform="rotate(90)"/>
+        <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" path="M-60 420 C 300 250, 900 120, 1520 170"/>
+      </g>
+    </svg>
+    <div class="sun"></div>
   <div class="hero-inner">
     <div class="caps rv">A Navictur convida</div>
     <img class="mark rv d1" src="assets/marca-30.webp" alt="30 anos">
     <div class="brand rv d1">NAVICTUR</div>
     <h2 class="rv d2">Uma manhã de<span class="script gold-text">experiências</span></h2>
     <p class="lead rv d3">à beira-mar, para celebrar trinta anos juntos</p>
+  </div>
+  </div>
+  <div class="sea">
+    <div class="glints"></div>
+    <div class="wave w1"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q90 10 180 30 T360 30 T540 30 T720 30 T900 30 T1080 30 T1260 30 T1440 30 V60 H0Z" fill="#2a477f"/></svg></div>
+    <div class="wave w2"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q60 14 120 30 T240 30 T360 30 T480 30 T600 30 T720 30 T840 30 T960 30 T1080 30 T1200 30 T1320 30 T1440 30 V60 H0Z" fill="#1a3266"/></svg></div>
+    <div class="wave w3"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q120 8 240 30 T480 30 T720 30 T960 30 T1200 30 T1440 30 V60 H0Z" fill="#0f2150"/></svg></div>
   </div>
   <div class="scroll-cue"><span class="caps">Role para embarcar</span><i></i></div>
 </section>
