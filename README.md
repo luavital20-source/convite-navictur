@@ -1,14 +1,14 @@
 # Convite Navictur · 30 anos
 
 Convite digital para a manhã de experiências dos 30 anos da Navictur
-(check-in, treino Wolfit e café da manhã à beira-mar, no Estaleiro).
+(check-in, treino leve e café da manhã à beira-mar, no Esttaleiro).
 
 ## Experiência
 1. **Passaporte**: capa azul com o "30" dourado; ao tocar, abre como um livro com "Você foi convidada"
 2. **Amanhecer no mar**: sol nascendo, ondas e um avião cruzando o céu
 3. **Visto**: página de identificação com o nome da convidada e carimbos que "batem" na tela
 4. **Carta** da equipe Navictur
-5. **Roteiro**: a rota se desenha com a rolagem (check-in → Wolfit → café da manhã)
+5. **Roteiro**: a rota se desenha com a rolagem (check-in → treino leve → café da manhã)
 6. **Última chamada**: contagem regressiva até o fim do prazo de confirmação
 7. **Destino**: cartão-postal com endereço e botão "Como chegar"
 8. **Bagagem de mão**: etiquetas com o que levar
