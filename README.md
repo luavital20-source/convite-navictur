@@ -1,28 +1,30 @@
 # Convite Navictur · 30 anos
 
-Convite digital em formato de passaporte para a manhã de experiências dos 30 anos da Navictur
-(treino Wolfit + café da manhã com vista para o mar).
+Convite digital para a manhã de experiências dos 30 anos da Navictur
+(check-in, treino Wolfit e café da manhã à beira-mar, no Estaleiro).
 
-## Fluxo
-1. Envelope-passaporte → "Toque para abrir" (o envelope abre e o mapa sobe)
-2. Embarque: "30 anos juntos com a Navictur" + cartão de embarque com o nome da convidada
-3. 01 · Página do passaporte (carimbos, dados do evento, faixa MRZ)
-4. Painel de partidas com contagem regressiva
-5. 02 · Nossa história
-6. 03 · O destino (link para o Google Maps)
-7. 04 · Roteiro (check-in, treino Wolfit, café da manhã)
-8. 05 · Lista de viagem (o que vestir, o que levar, chegada)
-9. Confirmação de presença: abre o WhatsApp com a mensagem pronta
+## Experiência
+1. **Passaporte**: capa azul com o "30" dourado; ao tocar, abre como um livro com "Você foi convidada"
+2. **Amanhecer no mar**: sol nascendo, ondas e um avião cruzando o céu
+3. **Visto**: página de identificação com o nome da convidada e carimbos que "batem" na tela
+4. **Carta** da equipe Navictur
+5. **Roteiro**: a rota se desenha com a rolagem (check-in → Wolfit → café da manhã)
+6. **Última chamada**: contagem regressiva até o fim do prazo de confirmação
+7. **Destino**: cartão-postal com endereço e botão "Como chegar"
+8. **Bagagem de mão**: etiquetas com o que levar
+9. **Cartão de embarque**: confirmação que abre o WhatsApp com a mensagem pronta e carimba "CONFIRMADO"
+
+Tipografia: Cinzel (títulos e rótulos), Cormorant Garamond (textos) e Pinyon Script (detalhes caligráficos).
 
 ## Como editar
 Todos os dados ficam no objeto `CONFIG` no fim do `index.html`:
-data/hora, local, endereço, link do Maps, **número de WhatsApp que recebe as confirmações**,
-prazo de confirmação e o roteiro.
+data, horário, local, endereço, link do Maps, número de WhatsApp que recebe as confirmações e prazo.
+Os textos (carta, roteiro, bagagem) estão direto no HTML e podem ser trocados livremente.
 
 ## Link personalizado
-Adicione `?nome=` ao link para cada convidada:
-`https://seu-dominio/?nome=Maria%20Silva` preenche o passaporte, o cartão de embarque e o formulário.
+Adicione `?nome=` ao link de cada convidada, por exemplo `https://seu-dominio/?nome=Maria%20Silva`.
+O nome aparece na abertura, no visto, na carta e já vem preenchido no formulário.
 
 ## Publicar
-É um site estático (só `index.html` + `assets/`). Basta importar o repositório na Vercel
-(sem build) ou abrir o `index.html` no navegador.
+Site estático (só `index.html` + `assets/`). Importe o repositório na Vercel sem build,
+ou abra o `index.html` no navegador.

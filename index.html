@@ -4,796 +4,853 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Passaporte Navictur · 30 anos</title>
-<meta name="description" content="Você foi convidada para uma manhã de experiências com vista para o mar. Navictur, 30 anos juntos.">
+<meta name="description" content="Você foi convidada para uma manhã de experiências à beira-mar. Navictur, 30 anos juntos.">
 <meta property="og:title" content="Passaporte Navictur · 30 anos juntos">
-<meta property="og:description" content="Seu embarque para uma manhã de experiências com vista para o mar.">
+<meta property="og:description" content="Seu embarque para uma manhã de experiências à beira-mar.">
 <meta property="og:image" content="assets/logo-navictur-30.webp">
-<meta name="theme-color" content="#0d1b3e">
+<meta name="theme-color" content="#0b1636">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0d1b3e; --navy-2:#142a5c; --navy-3:#1d3a7a; --night:#0a1430;
-  --gold:#c9a24a; --gold-l:#ecd38a; --gold-d:#9a7429;
-  --cream:#f5ede0; --paper:#fbf6ee; --ink:#18213f; --sepia:#8a5a3b; --sepia-l:#c79b73;
-  --sea:#2b6c8c;
-  --serif:"Playfair Display", Georgia, serif;
-  --sans:"Montserrat", system-ui, sans-serif;
-  --mono:"Space Mono", ui-monospace, monospace;
-  --gold-grad:linear-gradient(100deg,#9a7429 0%,#e9cf83 38%,#b8892f 62%,#f3dc97 82%,#a8802f 100%);
+  --night:#0a1430; --navy:#0d1b3e; --navy-2:#142a5c; --navy-3:#1d3a7a;
+  --gold:#c9a24a; --gold-l:#ecd38a; --gold-d:#9a7429; --gold-xd:#6f5219;
+  --cream:#f7f1e6; --paper:#fcf8f1; --ink:#17203d; --muted:#5d6480;
+  --caps:"Cinzel", "Times New Roman", serif;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --script:"Pinyon Script", "Brush Script MT", cursive;
+  --gold-grad:linear-gradient(100deg,#8c6a24 0%,#e9cf83 30%,#b8892f 52%,#f6e2a2 72%,#a07a2c 100%);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);overflow-x:hidden;line-height:1.5}
+body{background:var(--cream);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.55;overflow-x:hidden;
+  background-image:radial-gradient(rgba(120,90,40,.035) 1px,transparent 1.3px);background-size:6px 6px}
 body.locked{overflow:hidden;height:100vh}
 img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
 .gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.eyebrow{font:700 11px/1.3 var(--sans);letter-spacing:.22em;text-transform:uppercase}
-.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
-.display{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:.98}
-.display em{font-style:italic;color:var(--gold-d)}
+.caps{font-family:var(--caps);font-weight:500;letter-spacing:.24em;text-transform:uppercase;font-size:12px}
+.script{font-family:var(--script);font-weight:400;letter-spacing:0;line-height:1}
+.sec{padding:120px 0;position:relative}
+.head{text-align:center;margin-bottom:56px}
+.head .caps{color:var(--gold-d)}
+.head h2{font:300 clamp(40px,6.4vw,68px)/1.02 var(--serif);margin-top:14px;letter-spacing:-.01em}
+.head h2 .script{display:block;font-size:1.32em;color:var(--gold-d);margin-top:-.02em}
+.head p{max-width:520px;margin:16px auto 0;color:var(--muted);font-style:italic;font-size:19px}
+.flourish{width:min(280px,70%);margin:18px auto 0;color:var(--gold)}
+.on-dark .head .caps{color:var(--gold-l)}
+.on-dark .head h2{color:#fff}
+.on-dark .head h2 .script{color:var(--gold-l)}
 
-/* ---------- Reveal on scroll ---------- */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
 
-/* ---------- INTRO / envelope ---------- */
+/* =========================================================
+   INTRO · passaporte que abre como um livro
+   ========================================================= */
 .intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;
-  background:radial-gradient(ellipse at 50% 40%,#3a2b26 0%,#241a17 55%,#17100e 100%);
-  transition:opacity .9s ease .2s, visibility 0s linear 1.1s}
+  background:radial-gradient(ellipse at 50% 42%,#1a2a5a 0%,#0b1636 52%,#050a1c 100%);
+  transition:opacity 1s ease .25s,visibility 0s linear 1.3s}
 .intro.gone{opacity:0;visibility:hidden;pointer-events:none}
-.env-stage{position:relative;width:min(330px,74vw);aspect-ratio:3/5;perspective:1400px;cursor:pointer}
-.env{position:absolute;inset:0;border-radius:6px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
-.env-back,.env-front,.env-flap{position:absolute;inset:0;border-radius:6px;
-  background-color:#1d3577;
-  background-image:
-    radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.2px),
-    radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.2px),
-    linear-gradient(160deg,#22408a,#18306b 60%,#142757);
-  background-size:5px 5px,7px 7px,100% 100%;background-position:0 0,2px 3px,0 0}
-.env-back{background-image:linear-gradient(160deg,#14285a,#0f1f47)}
-.env-front{z-index:3;clip-path:polygon(0 34%,50% 64%,100% 34%,100% 100%,0 100%);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
-.env-front::before{content:"";position:absolute;inset:0;
-  background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(0,0,0,.18) 50%,transparent calc(50% + 1px)),
-             linear-gradient(to top left,transparent calc(50% - 1px),rgba(0,0,0,.18) 50%,transparent calc(50% + 1px));}
-.env-flap{z-index:5;clip-path:polygon(0 0,100% 0,100% 34%,50% 64%,0 34%);
-  transform-origin:50% 0;transition:transform 1s cubic-bezier(.5,0,.2,1);
-  display:flex;flex-direction:column;align-items:center;padding-top:9%;backface-visibility:hidden;
-  box-shadow:inset 0 -2px 0 rgba(0,0,0,.2)}
-.env-flap h1{font:600 clamp(22px,7.4vw,32px)/1 var(--serif);letter-spacing:.06em}
-.crest{width:66%;margin-top:11%;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
-.flap-sub{margin-top:8%;font:700 clamp(7.5px,2.3vw,9.5px)/1 var(--sans);letter-spacing:.26em}
-.env-flap-in{position:absolute;inset:0;z-index:1;clip-path:polygon(0 0,100% 0,100% 34%,50% 64%,0 34%);
-  background:linear-gradient(#0f2050,#0b1a40);transform-origin:50% 0;transform:rotateX(180deg);
-  transition:transform 1s cubic-bezier(.5,0,.2,1);backface-visibility:hidden;opacity:0}
-.seal{position:absolute;z-index:6;left:50%;top:64%;width:17%;aspect-ratio:1;transform:translate(-50%,-50%);
-  border-radius:50%;display:grid;place-items:center;
-  background:radial-gradient(circle at 35% 30%,#f6e3a1,#c9a24a 45%,#8a6522 100%);
-  box-shadow:0 4px 10px rgba(0,0,0,.45), inset 0 0 0 3px rgba(255,255,255,.18), inset 0 0 0 6px rgba(0,0,0,.08);
-  font:600 clamp(14px,4.4vw,19px)/1 var(--serif);color:#5d4212;transition:opacity .35s, transform .5s}
-.letter{position:absolute;z-index:2;left:6%;right:6%;top:6%;bottom:4%;border-radius:4px;overflow:hidden;
-  background:radial-gradient(ellipse at 50% 40%,#fbf3e2,#efe0c3);box-shadow:0 2px 8px rgba(0,0,0,.25);
-  transition:transform 1.1s cubic-bezier(.6,0,.2,1)}
-.letter svg{position:absolute;inset:0;width:100%;height:100%}
-.tap{position:absolute;z-index:7;left:50%;bottom:9%;transform:translateX(-50%);white-space:nowrap;
-  display:flex;align-items:center;gap:12px;padding:10px 20px 10px 10px;border-radius:999px;
-  background:rgba(20,16,20,.88);border:1px solid rgba(255,255,255,.18);color:#fff;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);transition:opacity .3s;animation:float 2.6s ease-in-out infinite}
-.tap .dot{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;position:relative}
-.tap .dot::before{content:"";width:9px;height:9px;border-radius:50%;background:#fff;animation:ping 1.6s ease-out infinite}
-.tap b{display:block;font:700 11px/1.2 var(--sans);letter-spacing:.2em}
-.tap small{display:block;font:400 10.5px/1.3 var(--sans);opacity:.75}
-@keyframes float{50%{transform:translate(-50%,-5px)}}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}100%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
-.intro-hint{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.35);font:500 10px var(--sans);letter-spacing:.25em;text-transform:uppercase}
-/* opening states */
-.intro.open .env-flap{transform:rotateX(180deg)}
-.intro.open .env-flap-in{transform:rotateX(0);opacity:1}
-.intro.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.6)}
-.intro.open .tap,.intro.open .intro-hint{opacity:0}
-.intro.rise .letter{transform:translateY(-62%);z-index:4}
-.intro.rise .env-flap{z-index:0}
-.intro.zoom .env-stage{transition:transform 1s cubic-bezier(.6,0,.2,1), opacity .8s ease .3s;transform:scale(3.2) translateY(14%);opacity:0}
+.dust{position:absolute;inset:0;pointer-events:none}
+.dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold-l);opacity:0;animation:dust 7s linear infinite;box-shadow:0 0 6px var(--gold)}
+@keyframes dust{0%{transform:translateY(20px);opacity:0}20%{opacity:.8}100%{transform:translateY(-140px);opacity:0}}
+.stage{position:relative;display:flex;flex-direction:column;align-items:center;gap:34px}
+.book{position:relative;width:min(300px,68vw);aspect-ratio:5/7;perspective:2000px;cursor:pointer;
+  transition:transform 1.2s cubic-bezier(.6,0,.2,1),opacity .9s ease .35s;outline:none}
+.page-in,.cover-face{position:absolute;inset:0;border-radius:4px 12px 12px 4px}
+.page-in{background:var(--paper);box-shadow:0 30px 60px rgba(0,0,0,.55);overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12% 10%}
+.page-in .gl{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.page-in>*:not(.gl){position:relative}
+.page-in .caps{font-size:9px;color:var(--gold-d);letter-spacing:.3em}
+.page-in .script{font-size:clamp(36px,10.5vw,48px);color:var(--navy);margin:14px 0 8px}
+.page-in p{font:italic 400 16px/1.45 var(--serif);color:var(--muted)}
+.page-in .who{font:600 11px var(--caps);letter-spacing:.22em;color:var(--gold-d);margin-top:16px}
+.cover{position:absolute;inset:0;transform-origin:0 50%;transform-style:preserve-3d;
+  transition:transform 1.5s cubic-bezier(.55,0,.2,1)}
+.cover-face{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.cover-front{
+  background:
+    radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.08),transparent 60%),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 2px,transparent 2px 4px),
+    linear-gradient(155deg,#1b3672,#12275a 55%,#0c1c45);
+  box-shadow:0 30px 60px rgba(0,0,0,.6),inset 6px 0 10px -4px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.05);
+  display:flex;flex-direction:column;align-items:center;padding:13% 10% 11%;overflow:hidden}
+.cover-front::before{content:"";position:absolute;inset:14px;border:1px solid rgba(236,211,138,.55);border-radius:2px 8px 8px 2px;
+  box-shadow:inset 0 0 0 5px rgba(236,211,138,.0),inset 0 0 0 6px rgba(236,211,138,.25)}
+.cover-front::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,240,200,.16) 50%,transparent 58%);
+  animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,30%{transform:translateX(-60%)}70%,100%{transform:translateX(60%)}}
+.cover-front h1{font:600 clamp(16px,5vw,22px)/1 var(--caps);letter-spacing:.3em;margin-right:-.3em}
+.cover-front .mark{width:74%;margin:auto 0 0;filter:drop-shadow(0 2px 2px rgba(0,0,0,.45))}
+.cover-front .brand{font:600 clamp(13px,4vw,17px)/1 var(--caps);letter-spacing:.42em;margin:8% -.42em 0 0}
+.cover-front .sub{font:italic 400 clamp(14px,3.8vw,16px) var(--serif);color:rgba(236,211,138,.85);margin-top:6px}
+.chip{margin-top:auto;width:34px;height:22px;border:1.5px solid var(--gold-l);border-radius:5px;position:relative;opacity:.85}
+.chip::before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;border:1.5px solid var(--gold-l);border-radius:50%;transform:translate(-50%,-50%)}
+.cover-back{transform:rotateY(180deg);background:linear-gradient(155deg,#10224f,#0b1a40);box-shadow:inset -6px 0 10px -4px rgba(0,0,0,.6);overflow:hidden}
+.cover-back .gl{position:absolute;inset:0;width:100%;height:100%;opacity:.25}
+.tap{display:flex;align-items:center;gap:12px;color:#fff;transition:opacity .4s;cursor:pointer}
+.ring{width:34px;height:34px;border-radius:50%;border:1px solid rgba(236,211,138,.6);display:grid;place-items:center}
+.ring::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold-l);animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(236,211,138,.7)}100%{box-shadow:0 0 0 14px rgba(236,211,138,0)}}
+.tap b{display:block;font:600 11px var(--caps);letter-spacing:.3em}
+.tap small{display:block;font:italic 400 15px var(--serif);color:rgba(255,255,255,.65)}
+.intro.open .cover{transform:rotateY(-168deg)}
+.intro.open .tap{opacity:0}
+.intro.zoom .book{transform:scale(2.4);opacity:0}
 
-/* ---------- HERO ---------- */
+/* =========================================================
+   HERO · amanhecer no mar
+   ========================================================= */
 .hero{position:relative;min-height:100svh;overflow:hidden;color:#fff;
-  background:radial-gradient(ellipse at 20% 10%,#21418c 0%,transparent 55%),linear-gradient(170deg,#163273 0%,#0f2152 55%,#0b183d 100%)}
-.hero .sky{position:absolute;inset:0;width:100%;height:100%}
-.hero-inner{position:relative;z-index:3;padding:calc(env(safe-area-inset-top) + 9vh) 0 0}
-.hero .eyebrow{color:var(--gold-l)}
-.hero h2{font:500 clamp(64px,15vw,172px)/.86 var(--serif);letter-spacing:-.035em;margin-top:18px}
-.hero h2 .amp{display:block;font-style:italic;font-size:.32em;line-height:1.1;color:var(--gold-l);margin:.04em 0 .04em .1em;letter-spacing:0}
-.hero h2 .brand{display:block}
-.dest{display:inline-block;margin-top:26px;padding:12px 18px 12px 16px;border-left:2px solid var(--gold);
-  background:linear-gradient(90deg,rgba(13,27,62,.75),rgba(13,27,62,.25));backdrop-filter:blur(3px)}
-.dest .eyebrow{font-size:9.5px;color:#fff;opacity:.85}
-.dest strong{display:block;font:500 26px/1.15 var(--serif);margin:3px 0 2px}
-.dest span{font:500 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.plane-wrap{position:absolute;z-index:2;right:-3%;bottom:16%;width:min(940px,70vw);
-  transform:rotate(-9deg);animation:cruise 7s ease-in-out infinite}
-@keyframes cruise{50%{transform:rotate(-9deg) translate(-10px,-10px)}}
-.bpass{position:relative;z-index:4;margin:0 auto;
-  width:min(760px,100% - 32px);background:var(--paper);color:var(--ink);border-radius:6px;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:12px;align-items:center;padding:16px 22px;
-  box-shadow:0 18px 40px rgba(5,10,30,.35)}
-.bpass::before,.bpass::after{content:"";position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:var(--navy-2);transform:translateY(-50%)}
-.bpass::before{left:-8px}.bpass::after{right:-8px}
-.bpass .eyebrow{font-size:8.5px;color:var(--sepia);letter-spacing:.18em}
-.bpass b{display:block;font:700 12px/1.25 var(--sans);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
-.bpass .code{font:700 12px var(--mono);color:var(--gold-d);border-left:1px dashed #cdbba0;padding-left:16px}
-.hero-bottom{position:absolute;left:0;right:0;bottom:0;height:56px;background:var(--cream);z-index:3}
-.scroll-cue{position:absolute;z-index:4;left:50%;bottom:90px;transform:translateX(-50%);color:rgba(255,255,255,.6);font:600 9px var(--sans);letter-spacing:.3em;text-transform:uppercase;text-align:center}
-.scroll-cue i{display:block;width:1px;height:34px;margin:8px auto 0;background:linear-gradient(#fff,transparent);animation:cue 1.8s ease-in-out infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  background:linear-gradient(180deg,#0a1430 0%,#12275a 30%,#2c3f7c 48%,#7a6f95 58%,#d79a7e 65%,#f0c27d 70%,#f6dca4 71.5%)}
+.stars{position:absolute;inset:0 0 30% 0}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 3s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.1}}
+.sun{position:absolute;left:50%;top:71%;width:min(240px,46vw);aspect-ratio:1;border-radius:50%;
+  transform:translate(-50%,-10%);
+  background:radial-gradient(circle,#fff6d8 0%,#f8dc9a 40%,#f0b86a 70%,rgba(240,184,106,0) 72%);
+  box-shadow:0 0 120px 50px rgba(246,201,128,.45);transition:transform 4.5s cubic-bezier(.2,.6,.2,1)}
+.hero.risen .sun{transform:translate(-50%,-62%)}
+.sea{position:absolute;left:0;right:0;bottom:0;top:71.5%;background:linear-gradient(180deg,#25407a 0%,#14295a 35%,#0b1636 100%);overflow:hidden}
+.glints{position:absolute;left:50%;top:0;width:min(220px,42vw);height:100%;transform:translateX(-50%);
+  background:repeating-linear-gradient(180deg,rgba(248,220,154,.75) 0 2px,transparent 2px 9px);
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);
+  opacity:.7;animation:glint 3s ease-in-out infinite}
+@keyframes glint{50%{opacity:.35;transform:translateX(-50%) scaleX(.82)}}
+.wave{position:absolute;left:0;width:200%;height:60px;animation:wave linear infinite}
+.wave svg{width:100%;height:100%}
+.wave.w1{top:6%;animation-duration:22s;opacity:.55}
+.wave.w2{top:30%;animation-duration:16s;opacity:.7}
+.wave.w3{top:58%;animation-duration:11s}
+@keyframes wave{to{transform:translateX(-50%)}}
+.hero-inner{position:relative;z-index:3;text-align:center;padding:calc(env(safe-area-inset-top) + 8vh) 16px 0}
+.hero .caps{color:var(--gold-l);font-size:11px;letter-spacing:.38em}
+.hero .mark{width:min(230px,52vw);margin:20px auto 0;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
+.hero .brand{font:600 clamp(15px,3.6vw,20px)/1 var(--caps);letter-spacing:.5em;margin:12px -.5em 0 0;color:#f6efe0}
+.hero h2{font:300 clamp(30px,5.2vw,50px)/1.05 var(--serif);margin-top:28px;color:#fbf6ec}
+.hero h2 .script{display:block;font-size:2.1em;margin-top:-.02em;line-height:1.1;padding:0 .1em}
+.hero .lead{font:italic 400 clamp(17px,2.2vw,21px) var(--serif);color:rgba(255,255,255,.85);margin-top:4px}
+.plane{position:absolute;z-index:2;top:0;left:0;width:100%;height:72%;pointer-events:none}
+.scroll-cue{position:absolute;z-index:4;left:50%;bottom:26px;transform:translateX(-50%);text-align:center;color:rgba(255,255,255,.7)}
+.scroll-cue .caps{font-size:9px;color:inherit;letter-spacing:.34em}
+.scroll-cue i{display:block;width:1px;height:38px;margin:8px auto 0;background:linear-gradient(var(--gold-l),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-/* ---------- 01 PASSPORT ---------- */
-.sec{padding:110px 0}
-.sec-head{text-align:center;margin-bottom:46px}
-.sec-head .eyebrow{color:var(--gold-d)}
-.sec-head h3{font-size:clamp(40px,7.4vw,76px);margin-top:12px}
-.sec-head h3 em{display:block}
-.booklet{width:min(560px,100%);margin:0 auto;perspective:1600px}
-.page{position:relative;background:#fcf5ec;border:1px solid #ead9c4;overflow:hidden;
-  box-shadow:0 20px 40px rgba(80,50,20,.12)}
-.page::before{content:"";position:absolute;inset:10px;border:1px solid #e3cdb2;pointer-events:none;z-index:2}
-.page .bgmap{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
-.page-1{border-radius:10px 10px 0 0;aspect-ratio:1.25;display:grid;place-items:center}
-.page-2{border-radius:0 0 10px 10px;transform-origin:50% 0;box-shadow:0 30px 50px rgba(80,50,20,.16), inset 0 18px 22px -16px rgba(90,60,30,.28)}
-.page-2.rv{opacity:0;transform:rotateX(-80deg)}
-.page-2.rv.in{opacity:1;transform:none;transition:transform 1.3s cubic-bezier(.2,.7,.2,1) .2s,opacity .6s ease .2s}
-.p1-center{position:relative;z-index:3;text-align:center;color:var(--sepia);padding:0 24px}
-.p1-center .eyebrow{font-size:9.5px}
-.p1-center h4{font:500 clamp(30px,7vw,46px)/1.02 var(--serif);margin:10px 0 8px;color:#7a4a2e}
-.p1-center h4 i{display:block;font-size:.5em;color:var(--sepia-l)}
-.stamp{position:absolute;z-index:3;color:#a8714a}
-.stamp.s1{top:7%;left:6%;width:25%;transform:rotate(-14deg)}
-.stamp.s2{bottom:10%;right:7%;width:21%;transform:rotate(9deg);opacity:.8}
-.compass{position:absolute;z-index:2;left:5%;bottom:6%;width:24%;color:#c48d62}
-.p2{position:relative;z-index:3;display:grid;grid-template-columns:34% 1fr;gap:22px;padding:30px 28px 18px}
-.photo{aspect-ratio:3/4;border:2px solid #d9b896;padding:5px;border-radius:4px;background:#fff8ef;display:grid;place-items:center}
-.photo-in{width:100%;height:100%;background:linear-gradient(160deg,#0f2152,#163273);display:grid;place-items:center;border-radius:2px;overflow:hidden;position:relative}
-.photo-in img{width:88%;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));}
-.photo-in::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.04) 0 2px,transparent 2px 6px)}
-.fields .eyebrow{font-size:9px;color:var(--sepia)}
-.fields h5{font:600 clamp(20px,4.6vw,27px)/1.1 var(--serif);color:#7a4a2e;margin:6px 0 14px}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
-.fgrid small{display:block;font:700 8.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--sepia-l)}
-.fgrid span{display:block;font:500 12.5px/1.35 var(--sans);color:#5b3a26}
-.mrz{position:relative;z-index:3;display:flex;gap:14px;align-items:center;padding:12px 28px 26px;border-top:1px dashed #e0c9ad;margin:0 18px}
-.barcode{flex:0 0 32%;height:34px;background:repeating-linear-gradient(90deg,#5b3a26 0 2px,transparent 2px 4px,#5b3a26 4px 5px,transparent 5px 8px,#5b3a26 8px 11px,transparent 11px 12px);opacity:.85}
-.mrz code{font:700 clamp(8px,1.9vw,11px)/1.6 var(--mono);color:#7a5236;letter-spacing:.06em;word-break:break-all}
+/* =========================================================
+   VISTO · página de identificação
+   ========================================================= */
+.datapage{position:relative;width:min(820px,100%);margin:0 auto;background:var(--paper);border-radius:14px;overflow:hidden;
+  box-shadow:0 40px 80px -30px rgba(40,30,10,.35),0 0 0 1px #eadcc3}
+.datapage>.gl{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.dp-top{position:relative;display:flex;justify-content:space-between;align-items:center;padding:20px 30px;border-bottom:1px solid #ead9bd}
+.dp-top .caps{font-size:10px;color:var(--gold-d)}
+.dp-top .caps:last-child{color:var(--navy-3)}
+.dp-body{position:relative;display:grid;grid-template-columns:200px 1fr;gap:34px;padding:30px}
+.portrait{aspect-ratio:3/4;border-radius:6px;background:linear-gradient(160deg,#16306b,#0b1a40);position:relative;overflow:hidden;
+  display:grid;place-items:center;box-shadow:0 0 0 1px #d7bf8e,0 0 0 6px var(--paper),0 0 0 7px #d7bf8e}
+.portrait .gl{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.portrait img{position:relative;width:80%}
+.portrait span{position:absolute;bottom:12px;left:0;right:0;text-align:center;font:500 9px var(--caps);letter-spacing:.3em;color:var(--gold-l)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;align-content:start}
+.fields .full{grid-column:1/-1}
+.fields small{display:block;font:600 9.5px var(--caps);letter-spacing:.22em;color:var(--gold-d);margin-bottom:2px}
+.fields span{display:block;font:500 20px/1.25 var(--serif);color:var(--ink)}
+.fields .name{font:400 clamp(38px,6vw,52px)/1.1 var(--script);color:var(--navy)}
+.mrz{position:relative;padding:16px 30px 22px;border-top:1px dashed #dcc7a3;font:600 clamp(9px,1.9vw,13px)/1.7 "Courier New",monospace;letter-spacing:.14em;color:#6b5a3a;word-break:break-all}
+.stamp{position:absolute;pointer-events:none;color:#1f3f8a;mix-blend-mode:multiply;opacity:0}
+.stamp.s-visa{right:5%;top:16%;width:min(170px,34%);--r:-14deg}
+.stamp.s-city{right:6%;bottom:5%;width:min(140px,28%);--r:8deg;color:#9a5a2a}
+.in .stamp{animation:thud .55s cubic-bezier(.3,1.6,.5,1) .5s forwards}
+.in .stamp.s-city{animation-delay:1s}
+@keyframes thud{0%{opacity:0;transform:scale(2.2) rotate(var(--r))}60%{opacity:.85}100%{opacity:.82;transform:scale(1) rotate(var(--r))}}
 
-/* ---------- 02 DEPARTURES BOARD ---------- */
-.board{background:var(--navy);color:#fff;padding:26px 0 30px;position:relative;overflow:hidden}
-.board::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 34px)}
-.board-top,.board-bot{display:flex;justify-content:space-between;align-items:center;font:600 10px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);position:relative}
-.board-bot{color:var(--gold-l);margin-top:14px}
-.ontime{background:#3fbf7f;color:#06301b;padding:4px 9px;border-radius:2px;font-weight:700;animation:blink 2.4s steps(1) infinite}
-@keyframes blink{50%{opacity:.55}}
-.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;position:relative}
-.cd-cell small{display:block;font:700 9px var(--sans);letter-spacing:.2em;color:var(--gold-l);margin-bottom:8px}
-.digits{display:flex;gap:4px}
-.flap{position:relative;font:700 clamp(30px,7vw,58px)/1 var(--mono);background:#0a1532;border-radius:4px;padding:.12em .1em;min-width:.9em;text-align:center;
-  box-shadow:inset 0 -1px 0 rgba(255,255,255,.06),0 2px 0 #050b1d;overflow:hidden}
-.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.6)}
-.flap.flip{animation:flip .38s ease}
-@keyframes flip{0%{transform:rotateX(0)}45%{transform:rotateX(90deg);filter:brightness(.6)}100%{transform:rotateX(0)}}
+/* =========================================================
+   CARTA
+   ========================================================= */
+.letter-sec{background:radial-gradient(ellipse at 50% 0,#1a3270,#0d1b3e 60%,#0a1430);color:#fff;overflow:hidden}
+.roman{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:500 clamp(200px,38vw,440px)/1 var(--caps);letter-spacing:.04em;
+  color:transparent;-webkit-text-stroke:1px rgba(236,211,138,.13);pointer-events:none;white-space:nowrap}
+.letter{position:relative;width:min(680px,100%);margin:0 auto;text-align:center;padding:64px 46px;
+  border:1px solid rgba(236,211,138,.35);outline:1px solid rgba(236,211,138,.18);outline-offset:8px}
+.corner{position:absolute;width:56px;color:var(--gold)}
+.corner.tl{top:-6px;left:-6px}.corner.tr{top:-6px;right:-6px;transform:scaleX(-1)}
+.corner.bl{bottom:-6px;left:-6px;transform:scaleY(-1)}.corner.br{bottom:-6px;right:-6px;transform:scale(-1)}
+.letter .caps{color:var(--gold-l)}
+.letter .hi{font-size:clamp(48px,8vw,70px);color:var(--gold-l);margin:18px 0 18px;line-height:1.15}
+.letter p{font:italic 300 clamp(19px,2.3vw,22px)/1.7 var(--serif);color:rgba(255,255,255,.9)}
+.letter p+p{margin-top:16px}
+.letter .sig{font-size:clamp(38px,6vw,50px);color:var(--gold-l);margin-top:26px;line-height:1.2}
+.letter .sig-sub{font-size:10px;color:rgba(236,211,138,.7);margin-top:6px}
 
-/* ---------- 03 STORY ---------- */
-.story{position:relative;background:linear-gradient(90deg,#16244c 0%,#0d1b3e 48%,#0b1735 100%);color:#fff;overflow:hidden}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:560px;align-items:center}
-.story-art{position:relative;height:100%;min-height:420px}
-.story-art svg{position:absolute;left:-30%;top:50%;width:140%;transform:translateY(-50%)}
-.story-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 40%,#0d1b3e 100%)}
-.story-copy{padding:80px 0 80px 24px;position:relative;z-index:2}
-.story-copy .eyebrow{color:var(--gold-l)}
-.story-copy h3{font-size:clamp(40px,6.2vw,68px);margin:14px 0 22px}
-.story-copy h3 em{display:block;color:var(--gold-l)}
-.story-copy p{font:400 15px/1.75 var(--serif);color:rgba(255,255,255,.85);max-width:470px}
-.sign{margin-top:22px;font:700 10px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l)}
+/* =========================================================
+   ROTEIRO · rota que se desenha
+   ========================================================= */
+.route{position:relative;max-width:880px;margin:0 auto;--p:0}
+.track{position:absolute;left:50%;top:40px;bottom:40px;width:2px;transform:translateX(-50%);
+  background:repeating-linear-gradient(180deg,rgba(154,116,41,.4) 0 6px,transparent 6px 13px)}
+.track-fill{position:absolute;left:0;top:0;width:100%;height:calc(var(--p) * 100%);background:var(--gold-grad)}
+.track-plane{position:absolute;left:50%;top:calc(40px + var(--p) * (100% - 80px));width:28px;transform:translate(-50%,-50%) rotate(180deg);color:var(--navy-3);z-index:3;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.stop{position:relative;display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;min-height:250px}
+.medal{grid-column:2;grid-row:1;justify-self:center;width:76px;height:76px;border-radius:50%;background:var(--paper);display:grid;place-items:center;position:relative;z-index:2;
+  box-shadow:0 0 0 1px var(--gold),0 0 0 6px var(--cream),0 0 0 7px rgba(201,162,74,.5),0 12px 26px rgba(60,40,10,.18);color:var(--gold-d)}
+.medal svg{width:36px}
+.card{background:var(--paper);border:1px solid #e6d6b9;border-radius:4px;padding:26px 28px;position:relative;
+  box-shadow:0 20px 40px -24px rgba(60,40,10,.3)}
+.card::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,162,74,.25);pointer-events:none}
+.stop:nth-child(odd) .card{grid-column:3;grid-row:1}
+.stop:nth-child(even) .card{grid-column:1;grid-row:1;text-align:right}
+.card .caps{font-size:10px;color:var(--gold-d)}
+.card .time{font:500 15px var(--caps);letter-spacing:.14em;color:var(--navy-3);margin-top:12px}
+.card h3{font:500 32px/1.15 var(--serif);margin:4px 0 8px}
+.card h3 .script{font-size:1.25em;color:var(--gold-d);white-space:nowrap}
+.card p{font-size:17px;color:var(--muted);font-style:italic}
 
-/* ---------- 04 DESTINATION ---------- */
-.destn{display:grid;grid-template-columns:1fr 1.6fr 1fr;min-height:440px}
-.dcol{padding:56px 28px;display:flex;flex-direction:column;justify-content:center}
-.dcol.code{background:var(--gold-grad);color:var(--navy);align-items:center;text-align:center}
-.dcol.code b{font:700 clamp(46px,7vw,78px)/1 var(--sans);letter-spacing:-.02em}
-.dcol.code i{font-style:normal;font-size:26px;margin:6px 0}
-.dcol.mid{background:var(--paper)}
-.dcol.mid .eyebrow{color:var(--gold-d)}
-.dcol.mid h3{font-size:clamp(40px,6vw,64px);margin:12px 0 20px}
-.dcol.mid h3 em{display:block}
-.dcol.mid strong{font:500 20px var(--serif)}
-.dcol.mid p{font:400 12.5px/1.6 var(--sans);color:#5b6178;margin-top:4px}
-.maps{display:inline-flex;gap:6px;align-items:center;margin-top:18px;font:700 10.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:6px;align-self:flex-start}
-.maps:hover{color:var(--gold-d)}
-.dcol.sea{background:linear-gradient(180deg,#2b6c8c,#173f63);color:#fff;align-items:center;text-align:center;position:relative;overflow:hidden}
-.dcol.sea svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:70px;opacity:.5}
-.dcol.sea .eyebrow{font-size:9px;opacity:.75}
-.dcol.sea strong{font:500 28px/1.1 var(--serif);color:var(--gold-l);margin:8px 0 4px;position:relative}
-.dcol.sea span{font:500 11px var(--sans);opacity:.8;position:relative}
+/* =========================================================
+   ÚLTIMA CHAMADA · contagem
+   ========================================================= */
+.call{background:var(--navy);color:#fff;padding:84px 0;text-align:center;overflow:hidden;position:relative}
+.call>.gl{position:absolute;inset:0;width:100%;height:100%;opacity:.14}
+.call .caps{color:var(--gold-l);position:relative}
+.call h2{position:relative;font:300 clamp(30px,4.6vw,46px)/1.2 var(--serif);margin:12px 0 36px}
+.call h2 .script{font-size:1.3em;color:var(--gold-l);white-space:nowrap}
+.clock{position:relative;display:flex;justify-content:center;gap:clamp(8px,2.4vw,22px)}
+.unit{width:clamp(72px,17vw,140px);padding:18px 0 14px;border:1px solid rgba(236,211,138,.45);position:relative;background:rgba(255,255,255,.02)}
+.unit::before{content:"";position:absolute;inset:4px;border:1px solid rgba(236,211,138,.15)}
+.unit b{display:block;font:300 clamp(40px,8vw,76px)/1 var(--serif);font-variant-numeric:lining-nums tabular-nums}
+.unit b.tick{animation:tick .5s ease}
+@keyframes tick{0%{opacity:.2;transform:translateY(-8px)}100%{opacity:1;transform:none}}
+.unit small{display:block;font:500 9px var(--caps);letter-spacing:.24em;color:var(--gold-l);margin-top:10px}
+.call .note{position:relative;margin-top:28px;font-style:italic;color:rgba(255,255,255,.75)}
 
-/* ---------- 05 ITINERARY ---------- */
-.route{display:grid;grid-template-columns:repeat(3,1fr);background:var(--paper);border:1px solid #e3d5bf;max-width:1000px;margin:0 auto}
-.stop{padding:26px 24px 22px;border-right:1px dashed #d8c6a9;display:flex;flex-direction:column;min-height:230px;position:relative;transition:background .3s}
-.stop:last-child{border-right:0}
-.stop:hover{background:#fff}
-.stop .n{font:700 10px var(--sans);color:var(--gold-d);letter-spacing:.1em}
-.stop .t{margin-top:30px;font:700 10.5px var(--sans);letter-spacing:.14em;color:var(--navy-3)}
-.stop h4{font:500 23px/1.2 var(--serif);margin:4px 0 8px}
-.stop p{font:400 12.5px/1.6 var(--sans);color:#5b6178;flex:1}
-.gate{align-self:flex-end;margin-top:16px;background:var(--navy);color:#fff;font:700 9.5px var(--sans);letter-spacing:.16em;padding:5px 9px;border-radius:2px}
-.stop .ico{position:absolute;top:22px;right:22px;width:28px;color:var(--gold)}
+/* =========================================================
+   DESTINO · cartão-postal
+   ========================================================= */
+.postcard{width:min(900px,100%);margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;background:var(--paper);
+  box-shadow:0 40px 70px -30px rgba(40,30,10,.4),0 0 0 1px #e6d6b9}
+.postcard.rv.in{transform:rotate(-1.2deg);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity 1s}
+.postcard.rv.in:hover{transform:rotate(0) translateY(-4px)}
+.pc-art{position:relative;min-height:400px;overflow:hidden;background:linear-gradient(180deg,#1b3470 0%,#5d5f93 42%,#e7a985 58%,#f3cf91 64%)}
+.pc-art svg{position:absolute;inset:0;width:100%;height:100%}
+.pc-art .hello{position:absolute;left:24px;top:22px;color:#fff;font-size:clamp(44px,6vw,60px);line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.pc-art .hello small{display:block;font:500 10px var(--caps);letter-spacing:.32em;color:var(--gold-l);margin-top:2px;text-shadow:none}
+.pc-text{position:relative;padding:34px 34px 30px;display:flex;flex-direction:column;border-left:1px dashed #d8c39d}
+.postage{position:absolute;top:22px;right:22px;width:80px;height:96px;padding:9px;transform:rotate(3deg);filter:drop-shadow(0 3px 4px rgba(0,0,0,.18))}
+.postage>svg{position:absolute;inset:0;width:100%;height:100%}
+.postage div{position:relative;width:100%;height:100%;border:1px solid rgba(236,211,138,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.postage img{width:80%}
+.postage span{font:600 7px var(--caps);letter-spacing:.2em;color:var(--gold-l)}
+.postmark{position:absolute;top:58px;right:76px;width:120px;color:rgba(31,63,138,.5);transform:rotate(-10deg)}
+.pc-text .caps{font-size:10px;color:var(--gold-d)}
+.pc-text h3{font-size:clamp(56px,7vw,74px);line-height:1.15;color:var(--navy);margin:58px 0 8px}
+.addr{font:500 20px/1.5 var(--serif);border-bottom:1px solid #e3d2b4;padding-bottom:10px;margin-bottom:10px}
+.addr+.addr{font-size:18px;color:var(--muted);font-style:italic}
+.btn-line{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border:1px solid var(--navy);
+  font:600 11px var(--caps);letter-spacing:.24em;text-decoration:none;color:var(--navy);transition:all .25s}
+.btn-line:hover{background:var(--navy);color:var(--gold-l)}
 
-/* ---------- 06 CHECKLIST ---------- */
-.check{background:linear-gradient(170deg,#173576,#0f2152);color:#fff;overflow:hidden;position:relative}
-.check-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center;min-height:520px}
-.check-left{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:70px 0}
-.check-left .eyebrow{color:var(--gold-l)}
-.check-left h3{font-size:clamp(42px,6.4vw,72px);margin-top:12px;position:relative;z-index:2}
-.check-left h3 em{display:block;color:var(--gold-l)}
-.bag{width:min(260px,60%);margin-top:20px;transform:rotate(-6deg)}
-.items{list-style:none;padding:60px 0}
-.items li{display:grid;grid-template-columns:44px 1fr;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.14)}
-.items li:last-child{border-bottom:0}
-.items .n{font:700 10px var(--sans);color:var(--gold-l);padding-top:6px}
-.items h4{font:500 21px var(--serif);margin-bottom:6px}
-.items p{font:400 13px/1.65 var(--sans);color:rgba(255,255,255,.75)}
+/* =========================================================
+   BAGAGEM · etiquetas
+   ========================================================= */
+.bag-sec{background:linear-gradient(180deg,#0d1b3e,#12275a);color:#fff;overflow:hidden}
+.tags{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:960px;margin:0 auto}
+.tagw{display:flex;flex-direction:column;align-items:center}
+.swing{display:flex;flex-direction:column;align-items:center;width:100%;transform-origin:50% 0;animation:swing 5s ease-in-out infinite}
+.tagw:nth-child(2) .swing{animation-delay:-1.6s}.tagw:nth-child(3) .swing{animation-delay:-3.2s}
+@keyframes swing{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+.string{width:2px;height:54px;background:linear-gradient(var(--gold-l),var(--gold-d));position:relative}
+.string::before{content:"";position:absolute;top:-8px;left:50%;width:16px;height:16px;border-radius:50%;border:2px solid var(--gold-l);transform:translateX(-50%)}
+.tag{width:100%;max-width:290px;background:var(--paper);color:var(--ink);padding:46px 26px 28px;text-align:center;position:relative;
+  clip-path:polygon(18% 0,82% 0,100% 12%,100% 100%,0 100%,0 12%)}
+.tag::before{content:"";position:absolute;top:14px;left:50%;width:14px;height:14px;border-radius:50%;background:var(--navy);transform:translateX(-50%);box-shadow:0 0 0 3px var(--gold)}
+.tag-in{position:absolute;inset:8px;border:1px solid rgba(201,162,74,.5);clip-path:polygon(18% 0,82% 0,100% 12%,100% 100%,0 100%,0 12%);pointer-events:none}
+.tag .n{font:600 13px var(--caps);letter-spacing:.3em;color:var(--gold-d)}
+.tag h3{font:500 28px/1.1 var(--serif);margin:10px 0 10px}
+.tag p{font-size:16.5px;font-style:italic;color:var(--muted)}
+.tag .bar{height:26px;margin:18px auto 0;width:70%;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px);opacity:.75}
 
-/* ---------- 07 RSVP ---------- */
-.rsvp{display:grid;grid-template-columns:1fr 1.5fr;min-height:560px}
-.stub{position:relative;background:var(--gold-grad);color:var(--navy);padding:70px 44px;display:flex;flex-direction:column;justify-content:center}
-.stub::after{content:"";position:absolute;top:0;bottom:0;right:-9px;width:18px;
-  background:radial-gradient(circle at 9px 9px,var(--paper) 6px,transparent 6.5px) 0 0/18px 18px repeat-y}
-.stub .eyebrow{color:#3a2a08}
-.stub h3{font-size:clamp(46px,6.6vw,76px);margin:14px 0 16px}
-.stub h3 em{display:block;color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.08)}
-.stub p{font:400 15px/1.6 var(--serif);max-width:320px}
-.stub .tag{margin-top:24px;align-self:flex-start;border:1px solid rgba(13,27,62,.55);padding:6px 10px;font:700 9.5px var(--sans);letter-spacing:.2em}
-.formside{background:var(--paper);padding:64px 56px;display:flex;align-items:center}
-form{width:100%;max-width:560px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
-label.l{display:flex;justify-content:space-between;align-items:center;font:700 9.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
-label.l .opt{font-size:8px;border:1px solid #d9c9b0;border-radius:99px;padding:2px 7px;color:#8a7a60;letter-spacing:.12em}
-input,select,textarea{width:100%;font:500 14px var(--sans);color:var(--ink);background:#fff;border:1px solid #d9cbb5;border-radius:2px;padding:12px 14px;outline:none;transition:border-color .2s, box-shadow .2s;-webkit-appearance:none;appearance:none}
-input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,74,.18)}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%239a7429' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.choice input{position:absolute;opacity:0;pointer-events:none}
-.choice label{display:block;text-align:center;cursor:pointer;border:1px solid var(--ink);padding:12px 8px;font:700 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;transition:all .2s}
-.choice input:checked+label{background:var(--navy);color:#fff;border-color:var(--navy)}
-.choice input:focus-visible+label{outline:2px solid var(--gold);outline-offset:2px}
-.btn{width:100%;border:0;cursor:pointer;background:var(--navy);color:#fff;font:700 11px var(--sans);letter-spacing:.24em;text-transform:uppercase;padding:17px;border-radius:2px;transition:background .2s, transform .1s}
-.btn:hover{background:var(--navy-3)}
+/* =========================================================
+   RSVP · cartão de embarque
+   ========================================================= */
+.pass{position:relative;width:min(940px,100%);margin:0 auto;display:grid;grid-template-columns:1fr 250px;background:var(--paper);border-radius:16px;
+  box-shadow:0 50px 90px -40px rgba(30,25,10,.5),0 0 0 1px #e3d2b3}
+.pass-main{padding:0 0 34px;min-width:0}
+.pass-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--navy);color:#fff;padding:18px 34px;border-radius:16px 0 0 0}
+.pass-head img{height:34px;width:auto}
+.pass-head .caps{font-size:10px;color:var(--gold-l)}
+.route-line{display:flex;align-items:center;gap:14px;padding:26px 34px 6px}
+.route-line b{font:600 30px/1 var(--caps);letter-spacing:.06em;color:var(--navy)}
+.route-line small{display:block;font:italic 400 15px var(--serif);color:var(--muted)}
+.route-line .dash{flex:1;height:1px;border-top:1px dashed #c9b083;position:relative}
+.route-line .dash svg{position:absolute;left:50%;top:50%;width:22px;transform:translate(-50%,-50%) rotate(90deg);color:var(--gold-d);background:var(--paper);padding:0 3px;box-sizing:content-box}
+form{padding:20px 34px 0}
+.f{margin-bottom:22px}
+.f label,.f .lab{display:flex;justify-content:space-between;font:600 10px var(--caps);letter-spacing:.22em;color:var(--gold-d);margin-bottom:6px}
+.f .opt{font:italic 400 14px var(--serif);letter-spacing:0;color:#a08b66;text-transform:none}
+input,select,textarea{width:100%;font:500 20px var(--serif);color:var(--ink);background:transparent;border:0;border-bottom:1px solid #cdb68c;border-radius:0;
+  padding:8px 2px;outline:none;transition:border-color .25s;-webkit-appearance:none;appearance:none}
+input::placeholder,textarea::placeholder{color:#b3a283;font-style:italic}
+input:focus,select:focus,textarea:focus{border-bottom-color:var(--navy)}
+select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%239a7429' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 4px center;padding-right:24px}
+textarea{resize:vertical;min-height:44px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opts input{position:absolute;opacity:0;pointer-events:none;width:1px}
+.opts label{display:block;margin:0;cursor:pointer;text-align:center;padding:13px 10px;border:1px solid #cdb68c;border-radius:999px;
+  font:600 10.5px var(--caps);letter-spacing:.16em;color:var(--ink);transition:all .25s}
+.opts input:checked+label{background:var(--navy);border-color:var(--navy);color:var(--gold-l)}
+.opts input:focus-visible+label{outline:2px solid var(--gold);outline-offset:2px}
+.btn{width:100%;margin-top:6px;border:0;cursor:pointer;padding:18px;border-radius:999px;background:var(--gold-grad);background-size:200% 100%;
+  color:var(--night);font:700 12px var(--caps);letter-spacing:.3em;box-shadow:0 12px 24px -10px rgba(154,116,41,.7);transition:background-position .6s,transform .15s}
+.btn:hover{background-position:100% 0}
 .btn:active{transform:translateY(1px)}
-.err{color:#b23b2a;font:500 12px var(--sans);min-height:18px;margin-top:10px}
-.done{display:none;text-align:center;width:100%}
-.done.show{display:block;animation:pop .6s cubic-bezier(.2,.9,.3,1.3)}
-@keyframes pop{from{opacity:0;transform:scale(.9)}}
-.done .big-stamp{width:150px;margin:0 auto 18px;color:var(--gold-d);transform:rotate(-10deg)}
-.done h4{font:500 34px var(--serif)}
-.done p{font:400 14px/1.6 var(--sans);color:#5b6178;margin-top:8px}
-.done a{color:var(--gold-d);font-weight:600}
+.err{min-height:22px;margin-top:10px;font-style:italic;color:#a33a2a;font-size:16px}
+.pass-stub{position:relative;border-left:2px dashed #d4bf98;padding:0 0 26px;display:flex;flex-direction:column}
+.pass-stub::before,.pass-stub::after{content:"";position:absolute;left:-15px;width:28px;height:28px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 1px #e3d2b3}
+.pass-stub::before{top:-14px}.pass-stub::after{bottom:-14px}
+.stub-head{background:var(--navy-2);color:var(--gold-l);padding:27px 22px 26px;border-radius:0 16px 0 0;text-align:center;font:600 10px var(--caps);letter-spacing:.3em}
+.stub-body{padding:22px 24px 0;display:grid;gap:16px}
+.stub-body small{display:block;font:600 9px var(--caps);letter-spacing:.22em;color:var(--gold-d)}
+.stub-body span{display:block;font:500 20px/1.2 var(--serif)}
+.stub-bar{margin:auto 24px 0;height:54px;background:repeating-linear-gradient(90deg,var(--navy) 0 2px,transparent 2px 4px,var(--navy) 4px 7px,transparent 7px 8px,var(--navy) 8px 9px,transparent 9px 12px)}
+.ok-stamp{position:absolute;left:50%;top:50%;width:min(300px,72%);color:#1f3f8a;mix-blend-mode:multiply;opacity:0;pointer-events:none;--r:-12deg;transform:translate(-50%,-50%)}
+.pass.done .ok-stamp{animation:thud2 .6s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes thud2{0%{opacity:0;transform:translate(-50%,-50%) scale(2.3) rotate(var(--r))}100%{opacity:.88;transform:translate(-50%,-50%) scale(1) rotate(var(--r))}}
+.pass.done form{opacity:.3;pointer-events:none;transition:opacity .4s}
+.after{display:none;text-align:center;margin-top:30px;font-style:italic;color:var(--muted)}
+.after.show{display:block}
+.after a{color:var(--gold-d);font-weight:600}
 
-footer{background:var(--night);color:rgba(255,255,255,.7);padding:26px 0}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-footer .eyebrow{color:var(--gold-l);font-size:9.5px}
-footer img{height:40px;width:auto;filter:brightness(0) invert(1) opacity(.85)}
+footer{background:var(--night);color:rgba(255,255,255,.7);text-align:center;padding:60px 16px 50px}
+footer img{width:120px;margin:0 auto}
+footer .caps{display:block;margin-top:16px;color:var(--gold-l);font-size:10px;letter-spacing:.4em}
+footer .script{display:block;font-size:32px;color:#fff;margin-top:12px;opacity:.9;line-height:1.2}
 
-/* ---------- Responsive ---------- */
+/* =========================================================
+   Responsivo
+   ========================================================= */
 @media (max-width:820px){
-  .sec{padding:84px 0}
-  .bpass{grid-template-columns:1fr 1fr;gap:12px 14px;padding:14px 18px}
-  .bpass .code{grid-column:1/-1;border-left:0;border-top:1px dashed #cdbba0;padding:10px 0 0;text-align:center}
-  .plane-wrap{right:-40%;bottom:20%;width:150vw}
-  .hero-inner{padding-top:calc(env(safe-area-inset-top) + 8vh)}
-  .story-grid{grid-template-columns:1fr}
-  .story-art{min-height:240px;order:-1}
-  .story-art svg{left:-10%;width:130%}
-  .story-art::after{background:linear-gradient(180deg,transparent 40%,#0d1b3e 100%)}
-  .story-copy{padding:10px 0 70px}
-  .destn{grid-template-columns:1fr}
-  .dcol{padding:42px 24px}
-  .dcol.code{flex-direction:row;gap:16px;justify-content:center;padding:28px}
-  .dcol.code i{transform:rotate(-90deg);margin:0}
-  .dcol.sea{min-height:180px}
-  .route{grid-template-columns:1fr}
-  .stop{border-right:0;border-bottom:1px dashed #d8c6a9;min-height:0}
-  .stop:last-child{border-bottom:0}
-  .check-grid{grid-template-columns:1fr;gap:0}
-  .check-left{padding:70px 0 0}
-  .bag{position:absolute;right:0;top:52px;width:24%}
-  .board-bot{flex-wrap:wrap;gap:4px 12px}
-  .dcol.sea svg{height:44px}
-  .items{padding:20px 0 60px}
-  .rsvp{grid-template-columns:1fr}
-  .stub{padding:60px 24px 54px}
-  .stub::after{top:auto;right:0;left:0;bottom:-9px;width:auto;height:18px;
-    background:radial-gradient(circle at 9px 9px,var(--paper) 6px,transparent 6.5px) 0 0/18px 18px repeat-x}
-  .formside{padding:50px 20px 60px}
-  .p2{grid-template-columns:1fr;padding:26px 22px 14px}
-  .photo{width:46%;margin:0 auto}
-  .fields{text-align:center}
-  .fgrid{text-align:left}
+  body{font-size:17px}
+  .sec{padding:90px 0}
+  .dp-body{grid-template-columns:1fr;gap:24px;padding:24px 22px}
+  .portrait{width:46%;margin:0 auto}
+  .fields{gap:16px 18px}
+  .dp-top{padding:16px 22px}
+  .dp-top .caps:last-child{display:none}
+  .mrz{padding:14px 22px 20px}
+  .portrait{width:40%}
+  .stamp.s-visa{top:13%;right:2%;width:30%}
+  .stamp.s-city{right:5%;bottom:4%;width:30%}
+  .letter{padding:48px 22px}
+  .track,.track-plane{left:28px}
+  .stop{grid-template-columns:56px 1fr;min-height:0;padding:16px 0;gap:16px}
+  .medal{grid-column:1;width:56px;height:56px}
+  .medal svg{width:28px}
+  .stop:nth-child(odd) .card,.stop:nth-child(even) .card{grid-column:2;grid-row:1;text-align:left}
+  .card{padding:22px 20px}
+  .card h3{font-size:28px}
+  .postcard{grid-template-columns:1fr}
+  .postcard.rv.in{transform:none}
+  .pc-art{min-height:260px}
+  .pc-text{border-left:0;border-top:1px dashed #d8c39d;padding:30px 22px 28px}
+  .pc-text h3{margin-top:72px}
+  .tags{grid-template-columns:1fr;gap:6px;max-width:330px}
+  .pass{grid-template-columns:1fr}
+  .pass-head{border-radius:16px 16px 0 0;padding:16px 22px}
+  .route-line{padding:22px 22px 4px}
+  form{padding:16px 22px 0}
+  .pass-main{padding-bottom:30px}
+  .pass-stub{border-left:0;border-top:2px dashed #d4bf98;padding:0 0 22px}
+  .pass-stub::before,.pass-stub::after{top:-15px;bottom:auto}
+  .pass-stub::before{left:-14px}.pass-stub::after{left:auto;right:-14px}
+  .stub-head{display:none}
+  .stub-body{grid-template-columns:repeat(3,1fr);padding:20px 22px 0}
+  .stub-bar{margin:18px 22px 0;height:40px}
 }
 @media (max-width:480px){
-  .row{grid-template-columns:1fr}
-  .cd{gap:8px}
-  .flap{padding:.1em .06em}
-  .digits{gap:2px}
-  .board-top span:nth-child(2){display:none}
-  .mrz{flex-direction:column;align-items:stretch;padding:12px 10px 22px}
-  .barcode{flex-basis:30px}
+  .two{grid-template-columns:1fr;gap:0}
+  .fields span{font-size:18px}
+  .route-line b{font-size:24px}
+  .opts label{font-size:9.5px;letter-spacing:.1em}
 }
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition-duration:.01ms!important}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
   .rv{opacity:1;transform:none}
+  .stamp{opacity:.82}
 }
 </style>
 </head>
 <body class="locked">
 
-<!-- ================= SVG SYMBOLS ================= -->
+<!-- ================= SVG SÍMBOLOS ================= -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f3dc97"/><stop offset=".35" stop-color="#c9a24a"/>
-      <stop offset=".6" stop-color="#f0d68c"/><stop offset="1" stop-color="#9a7429"/>
-    </linearGradient>
-    <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eef1f6"/><stop offset="1" stop-color="#b9c2d3"/>
-    </linearGradient>
-    <linearGradient id="gWing" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9edf4"/><stop offset="1" stop-color="#a9b4c8"/>
-    </linearGradient>
-    <radialGradient id="gEngine" cx=".4" cy=".45" r=".6">
-      <stop offset="0" stop-color="#2a2f3a"/><stop offset=".6" stop-color="#525a6b"/><stop offset="1" stop-color="#d9dee7"/>
-    </radialGradient>
-    <!-- Airliner side view, nose to the left -->
-    <symbol id="airliner" viewBox="0 0 1000 380">
-      <path d="M770 168 L905 22 Q918 10 934 14 L952 18 L880 170 Z" fill="url(#gWing)"/>
-      <path d="M880 150 L985 120 Q995 118 994 128 L986 140 L900 176 Z" fill="#c8d0dd"/>
-      <path d="M60 186 Q62 150 120 142 L860 132 Q940 132 968 160 Q975 172 960 182 Q930 210 860 214 L130 226 Q66 226 60 186 Z" fill="url(#gBody)"/>
-      <path d="M62 196 Q70 222 130 226 L860 214 Q930 210 960 182 L960 186 Q930 222 860 226 L130 238 Q74 238 62 196Z" fill="#9aa6bb" opacity=".55"/>
-      <path d="M84 166 Q92 154 112 152 L128 152 Q116 166 112 172 L86 174 Z" fill="#26324a"/>
-      <g fill="#3a4766">
-        <rect x="190" y="160" width="9" height="12" rx="4"/><rect x="214" y="160" width="9" height="12" rx="4"/>
-        <rect x="238" y="159" width="9" height="12" rx="4"/><rect x="262" y="159" width="9" height="12" rx="4"/>
-        <rect x="286" y="158" width="9" height="12" rx="4"/><rect x="310" y="158" width="9" height="12" rx="4"/>
-        <rect x="334" y="157" width="9" height="12" rx="4"/><rect x="358" y="157" width="9" height="12" rx="4"/>
-        <rect x="382" y="156" width="9" height="12" rx="4"/><rect x="406" y="156" width="9" height="12" rx="4"/>
-        <rect x="430" y="155" width="9" height="12" rx="4"/><rect x="454" y="155" width="9" height="12" rx="4"/>
-        <rect x="478" y="154" width="9" height="12" rx="4"/><rect x="502" y="154" width="9" height="12" rx="4"/>
-        <rect x="526" y="153" width="9" height="12" rx="4"/><rect x="550" y="153" width="9" height="12" rx="4"/>
-        <rect x="574" y="152" width="9" height="12" rx="4"/><rect x="598" y="152" width="9" height="12" rx="4"/>
-        <rect x="622" y="151" width="9" height="12" rx="4"/><rect x="646" y="151" width="9" height="12" rx="4"/>
-        <rect x="670" y="150" width="9" height="12" rx="4"/><rect x="694" y="150" width="9" height="12" rx="4"/>
-        <rect x="718" y="149" width="9" height="12" rx="4"/><rect x="742" y="149" width="9" height="12" rx="4"/>
-        <rect x="766" y="148" width="9" height="12" rx="4"/><rect x="790" y="148" width="9" height="12" rx="4"/>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
+    <symbol id="flourish" viewBox="0 0 280 24">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <path d="M140 12 C 124 12, 118 2, 106 4 C 96 6, 98 18, 108 17 C 116 16, 114 8, 108 9"/>
+        <path d="M140 12 C 156 12, 162 2, 174 4 C 184 6, 182 18, 172 17 C 164 16, 166 8, 172 9"/>
+        <path d="M100 12 H 8"/><path d="M180 12 H 272"/>
+        <path d="M40 12 C 30 6, 22 6, 16 12 C 22 18, 30 18, 40 12Z"/><path d="M240 12 C 250 6, 258 6, 264 12 C 258 18, 250 18, 240 12Z"/>
       </g>
-      <rect x="150" y="156" width="18" height="40" rx="4" fill="none" stroke="#9aa6bb" stroke-width="2"/>
-      <path d="M120 200 L880 186" stroke="#c9a24a" stroke-width="4" opacity=".9"/>
-      <path d="M120 207 L880 193" stroke="#0d1b3e" stroke-width="3" opacity=".7"/>
-      <path d="M380 208 L640 214 L760 352 Q766 364 750 364 L716 364 Z" fill="url(#gWing)"/>
-      <path d="M716 364 L760 352 L770 330 L756 330 Z" fill="#c8d0dd"/>
-      <g transform="translate(470 256)">
-        <path d="M-70 -24 Q-80 0 -70 24 L80 20 Q96 0 80 -20 Z" fill="#dfe4ec"/>
-        <ellipse cx="-70" cy="0" rx="16" ry="25" fill="url(#gEngine)"/>
-        <ellipse cx="-70" cy="0" rx="10" ry="17" fill="#1b202b"/>
-        <path d="M-60 -24 L60 -20" stroke="#fff" stroke-width="3" opacity=".7"/>
+      <path d="M140 5 L146 12 L140 19 L134 12Z" fill="currentColor"/>
+      <circle cx="4" cy="12" r="1.6" fill="currentColor"/><circle cx="276" cy="12" r="1.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="corner" viewBox="0 0 60 60">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M2 58 V 14 Q 2 2 14 2 H 58"/>
+        <path d="M8 58 V 20 Q 8 8 20 8 H 58" opacity=".55"/>
+        <path d="M14 30 C 14 20, 20 14, 30 14 C 24 18, 22 22, 22 28 C 22 34, 28 34, 28 28"/>
       </g>
-      <text x="830" y="104" font-family="Montserrat,sans-serif" font-weight="700" font-size="34" fill="#0d1b3e" transform="rotate(-48 860 100)">30</text>
+      <circle cx="14" cy="14" r="2.4" fill="currentColor"/>
     </symbol>
-    <!-- Small plane icon -->
-    <symbol id="miniplane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
-    <symbol id="compass" viewBox="0 0 100 100">
-      <g fill="none" stroke="currentColor" stroke-width=".8"><circle cx="50" cy="50" r="34"/><circle cx="50" cy="50" r="30" stroke-dasharray="1 2"/></g>
-      <path fill="currentColor" d="M50 2 L55 45 L50 50 L45 45Z M50 98 L45 55 L50 50 L55 55Z M2 50 L45 45 L50 50 L45 55Z M98 50 L55 55 L50 50 L55 45Z" opacity=".9"/>
-      <path fill="currentColor" d="M50 20 L53 47 L50 50 L47 47Z M50 80 L47 53 L50 50 L53 53Z M20 50 L47 47 L50 50 L47 53Z M80 50 L53 53 L50 50 L53 47Z" transform="rotate(45 50 50)" opacity=".55"/>
+    <symbol id="st-visa" viewBox="0 0 160 160">
+      <path id="arcTop" d="M22 80 a58 58 0 1 1 116 0" fill="none"/>
+      <path id="arcBot" d="M16 80 a64 64 0 0 0 128 0" fill="none"/>
+      <g fill="none" stroke="currentColor"><circle cx="80" cy="80" r="76" stroke-width="3"/><circle cx="80" cy="80" r="70" stroke-width="1"/><circle cx="80" cy="80" r="44" stroke-width="1.2"/></g>
+      <text font-family="Cinzel,serif" font-weight="700" font-size="13" letter-spacing="3" fill="currentColor" text-anchor="middle"><textPath href="#arcTop" startOffset="50%">VISTO CONCEDIDO</textPath></text>
+      <text font-family="Cinzel,serif" font-weight="700" font-size="11" letter-spacing="3" fill="currentColor" text-anchor="middle"><textPath href="#arcBot" startOffset="50%" side="right">NAVICTUR · 30 ANOS</textPath></text>
+      <text x="80" y="82" text-anchor="middle" font-family="Pinyon Script,cursive" font-size="25" fill="currentColor">Bem-vinda</text>
+      <text x="80" y="102" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="10" letter-spacing="2" fill="currentColor">★ VIP ★</text>
     </symbol>
-    <symbol id="stamp" viewBox="0 0 120 120">
-      <defs><path id="sc" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
-      <g fill="none" stroke="currentColor"><circle cx="60" cy="60" r="56" stroke-width="2.2"/><circle cx="60" cy="60" r="51" stroke-width=".8"/><circle cx="60" cy="60" r="33" stroke-width=".8"/></g>
-      <text font-family="Montserrat,sans-serif" font-weight="700" font-size="9.5" letter-spacing="2.6" fill="currentColor"><textPath href="#sc">NAVICTUR · 30 ANOS JUNTOS · EMBARQUE ·</textPath></text>
-      <text x="60" y="58" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="15" fill="currentColor">Você foi</text>
-      <text x="60" y="76" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="15" fill="currentColor">convidada</text>
+    <symbol id="st-city" viewBox="0 0 160 100">
+      <rect x="3" y="3" width="154" height="94" rx="10" fill="none" stroke="currentColor" stroke-width="3"/>
+      <rect x="10" y="10" width="140" height="80" rx="6" fill="none" stroke="currentColor" stroke-width="1"/>
+      <text x="80" y="40" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="17" letter-spacing="3" fill="currentColor">FORTALEZA</text>
+      <path d="M22 52 H138" stroke="currentColor" stroke-width="1"/>
+      <text x="80" y="74" text-anchor="middle" font-family="Cinzel,serif" font-weight="600" font-size="12" letter-spacing="3" fill="currentColor">ENTRADA · 07H30</text>
     </symbol>
-    <symbol id="postmark" viewBox="0 0 120 90">
-      <circle cx="40" cy="45" r="36" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      <text x="40" y="42" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="700" font-size="9" letter-spacing="1" fill="currentColor">FORTALEZA</text>
-      <text x="40" y="56" text-anchor="middle" font-family="Space Mono,monospace" font-weight="700" font-size="9" fill="currentColor">2026</text>
-      <g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M64 28 q7 -5 14 0 t14 0 t14 0 t14 0"/><path d="M64 40 q7 -5 14 0 t14 0 t14 0 t14 0"/><path d="M64 52 q7 -5 14 0 t14 0 t14 0 t14 0"/><path d="M64 64 q7 -5 14 0 t14 0 t14 0 t14 0"/></g>
+    <symbol id="st-ok" viewBox="0 0 300 130">
+      <rect x="4" y="4" width="292" height="122" rx="14" fill="none" stroke="currentColor" stroke-width="5"/>
+      <rect x="14" y="14" width="272" height="102" rx="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
     </symbol>
-    <!-- Suitcase -->
-    <symbol id="bag" viewBox="0 0 200 300">
-      <rect x="70" y="10" width="60" height="44" rx="10" fill="none" stroke="#d6dbe6" stroke-width="8"/>
-      <rect x="20" y="46" width="160" height="220" rx="22" fill="#eef1f6"/>
-      <rect x="20" y="46" width="160" height="220" rx="22" fill="url(#gWing)" opacity=".5"/>
-      <g stroke="#c9d0dd" stroke-width="4"><path d="M58 60 V252 M100 60 V252 M142 60 V252"/></g>
-      <rect x="20" y="140" width="160" height="10" fill="#c9a24a"/>
-      <rect x="120" y="96" width="50" height="34" rx="4" fill="#0d1b3e" transform="rotate(-8 145 113)"/>
-      <text x="145" y="118" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="700" font-size="11" fill="#ecd38a" transform="rotate(-8 145 113)">NVT 30</text>
-      <circle cx="50" cy="278" r="12" fill="#3a4766"/><circle cx="150" cy="278" r="12" fill="#3a4766"/>
+    <symbol id="postmark" viewBox="0 0 140 80">
+      <circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" stroke-width=".8"/>
+      <text x="40" y="38" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="8" letter-spacing="1" fill="currentColor">CAIS DO</text>
+      <text x="40" y="50" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="8" letter-spacing="1" fill="currentColor">PORTO</text>
+      <g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M78 22 q8 -6 16 0 t16 0 t16 0"/><path d="M78 34 q8 -6 16 0 t16 0 t16 0"/><path d="M78 46 q8 -6 16 0 t16 0 t16 0"/><path d="M78 58 q8 -6 16 0 t16 0 t16 0"/></g>
     </symbol>
-    <!-- Vintage map card -->
-    <symbol id="mapcard" viewBox="0 0 300 500" preserveAspectRatio="xMidYMid slice">
-      <g fill="#d9c094" opacity=".55">
-        <path d="M30 120 q30 -30 70 -20 q20 10 10 40 q-20 20 -10 50 q-10 30 -40 20 q-30 -20 -40 -50 q-10 -20 10 -40Z"/>
-        <path d="M80 230 q20 -10 30 10 q10 30 -5 60 q-10 30 -25 10 q-10 -30 0 -80Z"/>
-        <path d="M150 110 q30 -20 60 0 q30 10 60 0 q20 20 0 40 q-30 10 -40 30 q-30 10 -50 -10 q-20 -20 -30 -60Z"/>
-        <path d="M170 200 q30 -10 40 20 q0 40 -20 70 q-20 10 -25 -20 q-10 -40 5 -70Z"/>
-        <path d="M240 290 q20 -10 30 10 q0 20 -20 20 q-15 -10 -10 -30Z"/>
-      </g>
-      <g fill="none" stroke="#c4a573" stroke-width=".8" opacity=".6">
-        <path d="M0 165 H300 M0 250 H300 M0 335 H300 M75 0 V500 M150 0 V500 M225 0 V500"/>
-      </g>
-      <path d="M40 360 Q150 260 260 150" fill="none" stroke="#9a7429" stroke-width="1.4" stroke-dasharray="4 5"/>
-      <use href="#compass" x="115" y="380" width="70" height="70" color="#a8794a"/>
-      <use href="#compass" x="125" y="20" width="50" height="50" color="#a8794a"/>
-    </symbol>
-    <symbol id="worldfaint" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
-      <g fill="#e8d6c0">
-        <path d="M60 90 q50 -40 120 -20 q30 20 10 60 q-40 30 -20 70 q-20 40 -70 20 q-50 -30 -60 -70 q-10 -40 20 -60Z"/>
-        <path d="M150 230 q30 -10 45 20 q15 50 -10 100 q-20 30 -35 -10 q-10 -50 0 -110Z"/>
-        <path d="M300 80 q60 -30 120 0 q60 15 110 0 q30 30 0 70 q-60 20 -80 50 q-60 20 -100 -20 q-40 -40 -50 -100Z"/>
-        <path d="M330 200 q50 -10 70 30 q0 60 -40 110 q-30 20 -40 -30 q-10 -60 10 -110Z"/>
-        <path d="M480 270 q30 -10 50 20 q0 30 -30 30 q-25 -15 -20 -50Z"/>
-      </g>
-      <g fill="none" stroke="#d9bd9c" stroke-width="1.2" stroke-dasharray="3 5">
-        <path d="M40 330 Q300 120 580 300"/><path d="M20 60 Q260 220 590 70"/>
-      </g>
-    </symbol>
+    <symbol id="i-sun" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M6 28 H34 M10 33 H30"/><path d="M12 28 a8 8 0 0 1 16 0"/><path d="M20 10 V14 M9 15 l3 3 M31 15 l-3 3 M4 24 H8 M32 24 H36"/></g></symbol>
+    <symbol id="i-fit" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 16 V24 M8 12 V28 M32 12 V28 M36 16 V24 M8 20 H32"/></g></symbol>
+    <symbol id="i-cup" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M7 16 H28 V24 a8 8 0 0 1 -8 8 H15 a8 8 0 0 1 -8 -8Z"/><path d="M28 18 h2.5 a3.5 3.5 0 0 1 0 7 H28"/><path d="M13 6 c0 3 3 3 3 6 M19 6 c0 3 3 3 3 6"/><path d="M5 36 H31"/></g></symbol>
   </defs>
 </svg>
 
 <!-- ================= INTRO ================= -->
-<div class="intro" id="intro" role="dialog" aria-label="Abrir convite">
-  <div class="env-stage" id="envStage" tabindex="0" role="button" aria-label="Toque para abrir o convite">
-    <div class="env">
-      <div class="env-back"></div>
-      <div class="letter"><svg><use href="#mapcard"/></svg></div>
-      <div class="env-front"></div>
-      <div class="env-flap-in"></div>
-      <div class="env-flap">
-        <h1 class="gold-text">PASSAPORTE</h1>
-        <img class="crest" src="assets/marca-30.webp" alt="30 anos Navictur">
-        <div class="flap-sub gold-text">NAVICTUR · 30 ANOS JUNTOS</div>
+<div class="intro" id="intro">
+  <div class="dust" id="dust"></div>
+  <div class="stage">
+    <div class="book" id="book" tabindex="0" role="button" aria-label="Abrir o passaporte">
+      <div class="page-in">
+        <svg class="gl" data-guilloche="light"></svg>
+        <div class="caps">Navictur · 30 anos juntos</div>
+        <div class="script" id="welcome">Você foi convidada</div>
+        <p>para uma manhã de experiências<br>à beira-mar</p>
+        <div class="who">Bom embarque</div>
       </div>
-      <div class="seal">30</div>
+      <div class="cover">
+        <div class="cover-face cover-front">
+          <h1 class="gold-text">PASSAPORTE</h1>
+          <img class="mark" src="assets/marca-30.webp" alt="">
+          <div class="brand gold-text">NAVICTUR</div>
+          <div class="sub">30 anos juntos</div>
+          <div class="chip"></div>
+        </div>
+        <div class="cover-face cover-back"><svg class="gl" data-guilloche="dark"></svg></div>
+      </div>
     </div>
-    <div class="tap"><span class="dot"></span><span><b>TOQUE PARA ABRIR</b><small>Seu embarque começa aqui</small></span></div>
+    <div class="tap" id="tap"><span class="ring"></span><span><b>TOQUE PARA ABRIR</b><small>seu passaporte chegou</small></span></div>
   </div>
-  <div class="intro-hint">Navictur · 30 anos juntos</div>
 </div>
 
 <main>
 <!-- ================= HERO ================= -->
-<section class="hero" id="top">
-  <svg class="sky" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g fill="#fff" opacity=".5">
-      <circle cx="120" cy="140" r="1.4"/><circle cx="380" cy="60" r="1"/><circle cx="640" cy="180" r="1.2"/><circle cx="900" cy="90" r="1.6"/>
-      <circle cx="1180" cy="160" r="1"/><circle cx="1320" cy="60" r="1.3"/><circle cx="1040" cy="300" r="1"/><circle cx="260" cy="380" r="1.2"/>
-    </g>
-    <g fill="none" stroke="#ecd38a" stroke-width="1.2" opacity=".7">
-      <circle cx="90" cy="300" r="4"/><circle cx="1380" cy="110" r="4"/>
-    </g>
-    <path id="flight" d="M90 300 C 400 180, 900 80, 1380 110" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.3" stroke-dasharray="3 6"/>
-    <g color="#fff">
-      <use href="#miniplane" width="22" height="22" x="-11" y="-11" transform="rotate(90)">
-      </use>
-      <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#flight"/></animateMotion>
+<section class="hero" id="hero">
+  <div class="stars" id="stars"></div>
+  <svg class="plane" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-60 420 C 300 250, 900 120, 1520 170" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-dasharray="2 7"/>
+    <g color="#fff" opacity=".9">
+      <use href="#i-plane" width="20" height="20" x="-10" y="-10" transform="rotate(90)"/>
+      <animateMotion dur="14s" repeatCount="indefinite" rotate="auto" path="M-60 420 C 300 250, 900 120, 1520 170"/>
     </g>
   </svg>
-  <div class="wrap hero-inner">
-    <div class="eyebrow rv">Embarque imediato · Voo NVT 0030</div>
-    <h2 class="rv d1"><span class="brand">30 anos</span><span class="amp">juntos com a</span><span class="brand gold-text">Navictur</span></h2>
-    <div class="dest rv d2">
-      <div class="eyebrow">Destino</div>
-      <strong data-cfg="local"></strong>
-      <span data-cfg="cidadeData"></span>
-    </div>
+  <div class="sun"></div>
+  <div class="sea">
+    <div class="glints"></div>
+    <div class="wave w1"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q90 10 180 30 T360 30 T540 30 T720 30 T900 30 T1080 30 T1260 30 T1440 30 V60 H0Z" fill="#2a477f"/></svg></div>
+    <div class="wave w2"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q60 14 120 30 T240 30 T360 30 T480 30 T600 30 T720 30 T840 30 T960 30 T1080 30 T1200 30 T1320 30 T1440 30 V60 H0Z" fill="#1a3266"/></svg></div>
+    <div class="wave w3"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q120 8 240 30 T480 30 T720 30 T960 30 T1200 30 T1440 30 V60 H0Z" fill="#0f2150"/></svg></div>
   </div>
-  <div class="plane-wrap" aria-hidden="true"><svg viewBox="0 0 1000 380"><use href="#airliner"/></svg></div>
-  <div class="scroll-cue">Role para embarcar<i></i></div>
-  <div class="hero-bottom"></div>
-  <div class="bpass rv" style="position:absolute;left:0;right:0;bottom:18px">
-    <div><div class="eyebrow">Passageira</div><b id="passName">Convidada especial</b></div>
-    <div><div class="eyebrow">Embarque</div><b data-cfg="dataCurta"></b></div>
-    <div><div class="eyebrow">Portão</div><b>Vista mar</b></div>
-    <div class="code">NVT 0030</div>
+  <div class="hero-inner">
+    <div class="caps rv">A Navictur convida</div>
+    <img class="mark rv d1" src="assets/marca-30.webp" alt="30 anos">
+    <div class="brand rv d1">NAVICTUR</div>
+    <h2 class="rv d2">Uma manhã de<span class="script gold-text">experiências</span></h2>
+    <p class="lead rv d3">à beira-mar, para celebrar trinta anos juntos</p>
   </div>
+  <div class="scroll-cue"><span class="caps">Role para embarcar</span><i></i></div>
 </section>
 
-<!-- ================= 01 PASSPORT ================= -->
-<section class="sec" id="convite">
+<!-- ================= VISTO ================= -->
+<section class="sec" id="visto">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow rv">01 · Seu convite oficial</div>
-      <h3 class="display rv d1">Um passaporte.<em>Trinta anos de histórias.</em></h3>
+    <div class="head">
+      <div class="caps rv">Página de identificação</div>
+      <h2 class="rv d1">Seu visto para<span class="script">um dia inesquecível</span></h2>
+      <svg class="flourish rv d2" viewBox="0 0 280 24"><use href="#flourish"/></svg>
     </div>
-    <div class="booklet">
-      <div class="page page-1 rv">
-        <svg class="bgmap"><use href="#worldfaint"/></svg>
-        <svg class="stamp s1" viewBox="0 0 120 120"><use href="#stamp"/></svg>
-        <svg class="stamp s2" viewBox="0 0 120 90"><use href="#postmark"/></svg>
-        <svg class="compass" viewBox="0 0 100 100"><use href="#compass"/></svg>
-        <div class="p1-center">
-          <div class="eyebrow">Manhã de experiências</div>
-          <h4>Navictur<i>30 anos juntos</i></h4>
-          <div class="eyebrow" style="font-size:8.5px;opacity:.8">Admissão para uma manhã inesquecível</div>
+    <div class="datapage rv" id="datapage">
+      <svg class="gl" data-guilloche="light"></svg>
+      <div class="dp-top"><span class="caps">Passaporte de celebração</span><span class="caps">Nº NVT-0030</span></div>
+      <div class="dp-body">
+        <div class="portrait"><svg class="gl" data-guilloche="dark"></svg><img src="assets/marca-30.webp" alt=""><span>Navictur</span></div>
+        <div class="fields">
+          <div class="full"><small>Titular</small><div class="name" id="guestName">Convidada especial</div></div>
+          <div><small>Categoria</small><span>Viajante VIP</span></div>
+          <div><small>Destino</small><span data-cfg="local"></span></div>
+          <div><small>Data</small><span data-cfg="dataTexto"></span></div>
+          <div><small>Embarque</small><span data-cfg="horario"></span></div>
+          <div class="full"><small>Experiência</small><span>Treino Wolfit &amp; café da manhã à beira-mar</span></div>
         </div>
       </div>
-      <div class="page page-2 rv">
-        <svg class="bgmap"><use href="#worldfaint"/></svg>
-        <div class="p2">
-          <div class="photo"><div class="photo-in"><img src="assets/logo-navictur-30.webp" alt="Navictur 30 anos" style="filter:brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,.4))"></div></div>
-          <div class="fields">
-            <div class="eyebrow">Passaporte de celebração</div>
-            <h5 id="passName2">Convidada especial</h5>
-            <div class="fgrid">
-              <div><small>Destino</small><span data-cfg="local"></span></div>
-              <div><small>Data</small><span data-cfg="dataLonga"></span></div>
-              <div><small>Experiência</small><span>Treino Wolfit + café da manhã</span></div>
-              <div><small>Validade</small><span>Com carinho · 30 anos</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="mrz">
-          <div class="barcode"></div>
-          <code>P&lt;BRANAVICTUR&lt;&lt;30&lt;ANOS&lt;JUNTOS&lt;&lt;&lt;&lt;<br>NVT0030&lt;&lt;MANHA&lt;DE&lt;EXPERIENCIAS&lt;&lt;</code>
-        </div>
-      </div>
+      <div class="mrz">P&lt;BRANAVICTUR&lt;&lt;TRINTA&lt;ANOS&lt;JUNTOS&lt;&lt;&lt;&lt;&lt;<br>NVT0030&lt;&lt;FORTALEZA&lt;&lt;0730&lt;&lt;BEM&lt;VINDA&lt;&lt;</div>
+      <svg class="stamp s-visa" viewBox="0 0 160 160"><use href="#st-visa"/></svg>
+      <svg class="stamp s-city" viewBox="0 0 160 100"><use href="#st-city"/></svg>
     </div>
   </div>
 </section>
 
-<!-- ================= DEPARTURES BOARD ================= -->
-<section class="board" aria-label="Contagem regressiva">
+<!-- ================= CARTA ================= -->
+<section class="sec letter-sec on-dark">
+  <div class="roman" aria-hidden="true">XXX</div>
   <div class="wrap">
-    <div class="board-top"><span>Partidas</span><span>Voo NVT 0030 · Celebração</span><span class="ontime">No horário</span></div>
-    <div class="cd" id="cd">
-      <div class="cd-cell"><small>DIAS</small><div class="digits" data-u="d"></div></div>
-      <div class="cd-cell"><small>HORAS</small><div class="digits" data-u="h"></div></div>
-      <div class="cd-cell"><small>MINUTOS</small><div class="digits" data-u="m"></div></div>
-      <div class="cd-cell"><small>SEGUNDOS</small><div class="digits" data-u="s"></div></div>
-    </div>
-    <div class="board-bot"><span>Destino · Vista para o mar</span><span data-cfg="dataCurta"></span></div>
-  </div>
-</section>
-
-<!-- ================= 02 STORY ================= -->
-<section class="story">
-  <div class="wrap story-grid">
-    <div class="story-art" aria-hidden="true"><svg viewBox="0 0 1000 380"><use href="#airliner"/></svg></div>
-    <div class="story-copy">
-      <div class="eyebrow rv">02 · Nossa história</div>
-      <h3 class="display rv d1">Cada viagem nos trouxe<em>até aqui.</em></h3>
-      <p class="rv d2">São 30 anos levando sonhos na bagagem, planejando roteiros e colecionando histórias ao lado de quem confia na gente. Agora queremos celebrar com você, que faz parte dessa trajetória, numa manhã especial com o mar como paisagem.</p>
-      <div class="sign rv d3">Com carinho · Equipe Navictur</div>
+    <div class="letter">
+      <svg class="corner tl" viewBox="0 0 60 60"><use href="#corner"/></svg><svg class="corner tr" viewBox="0 0 60 60"><use href="#corner"/></svg>
+      <svg class="corner bl" viewBox="0 0 60 60"><use href="#corner"/></svg><svg class="corner br" viewBox="0 0 60 60"><use href="#corner"/></svg>
+      <div class="caps rv">Uma carta para você</div>
+      <div class="script hi rv d1" id="dear">Querida viajante,</div>
+      <p class="rv d2">Há trinta anos transformamos sonhos em roteiros, e roteiros em memórias. Cada embarque guardou um pedaço da nossa história, e muitos deles tiveram você.</p>
+      <p class="rv d3">Para celebrar essa jornada, preparamos uma manhã especial: movimento, sabor e o mar como paisagem. Será uma alegria ter você ao nosso lado.</p>
+      <div class="script sig rv d4">Equipe Navictur</div>
+      <div class="caps sig-sub rv d4">com carinho · desde sempre</div>
     </div>
   </div>
 </section>
 
-<!-- ================= 03 DESTINATION ================= -->
-<section class="destn" id="destino">
-  <div class="dcol code"><b>NVT</b><i>↓</i><b>MAR</b></div>
-  <div class="dcol mid">
-    <div class="eyebrow rv">03 · O destino</div>
-    <h3 class="display rv d1">Te esperamos<em>à beira-mar.</em></h3>
-    <strong class="rv d2" data-cfg="local"></strong>
-    <p class="rv d2" data-cfg="endereco"></p>
-    <a class="maps rv d3" id="mapsLink" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>
-  </div>
-  <div class="dcol sea">
-    <div class="eyebrow">Destino</div>
-    <strong data-cfg="local"></strong>
-    <span>Vista para o mar</span>
-    <svg viewBox="0 0 300 80" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.5"><path d="M0 20 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/><path d="M0 40 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/><path d="M0 60 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/></g></svg>
-  </div>
-</section>
-
-<!-- ================= 04 ITINERARY ================= -->
+<!-- ================= ROTEIRO ================= -->
 <section class="sec" id="roteiro">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow rv">04 · Plano de voo</div>
-      <h3 class="display rv d1">Seu roteiro.<em>Uma manhã inesquecível.</em></h3>
+    <div class="head">
+      <div class="caps rv">Plano de voo</div>
+      <h2 class="rv d1">O roteiro<span class="script">da nossa manhã</span></h2>
+      <svg class="flourish rv d2" viewBox="0 0 280 24"><use href="#flourish"/></svg>
     </div>
-    <div class="route" id="route"></div>
+    <div class="route" id="route">
+      <div class="track"><div class="track-fill"></div></div>
+      <svg class="track-plane" viewBox="0 0 24 24"><use href="#i-plane"/></svg>
+      <div class="stop">
+        <div class="medal rv"><svg viewBox="0 0 40 40"><use href="#i-sun"/></svg></div>
+        <div class="card rv d1"><div class="caps">Partida</div><div class="time" data-cfg="horario"></div><h3>Check-in &amp; <span class="script">boas-vindas</span></h3><p>Recepção das convidadas com o mar ao amanhecer como cenário.</p></div>
+      </div>
+      <div class="stop">
+        <div class="medal rv"><svg viewBox="0 0 40 40"><use href="#i-fit"/></svg></div>
+        <div class="card rv d1"><div class="caps">Primeira escala</div><div class="time">Em seguida</div><h3>Treino <span class="script">Wolfit</span></h3><p>Um treino especial para movimentar o corpo e despertar a energia do dia.</p></div>
+      </div>
+      <div class="stop">
+        <div class="medal rv"><svg viewBox="0 0 40 40"><use href="#i-cup"/></svg></div>
+        <div class="card rv d1"><div class="caps">Destino final</div><div class="time">Para encerrar</div><h3>Café da <span class="script">manhã</span></h3><p>Uma mesa preparada com carinho para brindarmos juntas os nossos 30 anos.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ================= 05 CHECKLIST ================= -->
-<section class="check">
-  <div class="wrap check-grid">
-    <div class="check-left">
-      <div class="eyebrow rv">05 · Antes de embarcar</div>
-      <h3 class="display rv d1">Sua lista<em>de viagem.</em></h3>
-      <svg class="bag rv d2" viewBox="0 0 200 300" aria-hidden="true"><use href="#bag"/></svg>
+<!-- ================= ÚLTIMA CHAMADA ================= -->
+<section class="call" aria-label="Prazo de confirmação">
+  <svg class="gl" data-guilloche="dark"></svg>
+  <div class="wrap">
+    <div class="caps rv">Última chamada</div>
+    <h2 class="rv d1">As confirmações <span class="script">encerram em</span></h2>
+    <div class="clock rv d2" id="clock">
+      <div class="unit"><b data-u="d">00</b><small>Dias</small></div>
+      <div class="unit"><b data-u="h">00</b><small>Horas</small></div>
+      <div class="unit"><b data-u="m">00</b><small>Min</small></div>
+      <div class="unit"><b data-u="s">00</b><small>Seg</small></div>
     </div>
-    <ul class="items">
-      <li class="rv"><span class="n">01</span><div><h4>O que vestir</h4><p>Roupa confortável de treino e tênis. Se quiser, leve uma muda de roupa para o café da manhã.</p></div></li>
-      <li class="rv d1"><span class="n">02</span><div><h4>O que levar</h4><p>Garrafinha de água, protetor solar e muita disposição para se movimentar.</p></div></li>
-      <li class="rv d2"><span class="n">03</span><div><h4>Chegada</h4><p>Chegue com 15 minutos de antecedência para o check-in. O treino começa pontualmente.</p></div></li>
-    </ul>
+    <p class="note rv d3" id="callNote">Confirme até <span data-cfg="prazoTexto"></span> e garanta o seu lugar.</p>
   </div>
 </section>
 
-<!-- ================= 06 RSVP ================= -->
-<section class="rsvp" id="rsvp">
-  <div class="stub">
-    <div class="eyebrow">Última chamada · Confirme até <span data-cfg="prazo"></span></div>
-    <h3 class="display">Garanta seu<em>assento.</em></h3>
-    <p>As vagas são limitadas e mal podemos esperar para viver essa manhã com você.</p>
-    <div class="tag">NVT · 2026</div>
-  </div>
-  <div class="formside">
-    <form id="form" novalidate>
-      <div class="row">
-        <div><label class="l" for="fNome">Nome da passageira</label><input id="fNome" name="nome" autocomplete="name" placeholder="Nome e sobrenome" required></div>
-        <div><label class="l" for="fTel">WhatsApp <span class="opt">Opcional</span></label><input id="fTel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(85) 9 0000-0000"></div>
-      </div>
-      <div class="choice" role="radiogroup" aria-label="Presença">
-        <input type="radio" id="cSim" name="vai" value="sim"><label for="cSim">Sim, estarei lá</label>
-        <input type="radio" id="cNao" name="vai" value="nao"><label for="cNao">Não poderei ir</label>
-      </div>
-      <div style="margin-bottom:18px"><label class="l" for="fRest">Restrição alimentar <span class="opt">Opcional</span></label>
-        <select id="fRest" name="rest">
-          <option value="">Nenhuma</option><option>Vegetariana</option><option>Vegana</option><option>Sem glúten</option><option>Sem lactose</option><option>Outra (descrevo na mensagem)</option>
-        </select>
-      </div>
-      <div style="margin-bottom:22px"><label class="l" for="fMsg">Mensagem <span class="opt">Opcional</span></label><textarea id="fMsg" name="msg" rows="2" placeholder="Deixe um recado para a Navictur"></textarea></div>
-      <button class="btn" type="submit">Confirmar embarque</button>
-      <div class="err" id="err" role="alert"></div>
-    </form>
-    <div class="done" id="done">
-      <svg class="big-stamp" viewBox="0 0 120 120"><use href="#stamp"/></svg>
-      <h4 id="doneTitle">Embarque confirmado!</h4>
-      <p id="doneText">Abrimos o WhatsApp com a sua confirmação. É só tocar em enviar.<br>Se não abriu, <a id="waAgain" target="_blank" rel="noopener">toque aqui</a>.</p>
+<!-- ================= DESTINO ================= -->
+<section class="sec" id="destino">
+  <div class="wrap">
+    <div class="head">
+      <div class="caps rv">O destino</div>
+      <h2 class="rv d1">Um cartão-postal<span class="script">à sua espera</span></h2>
+      <svg class="flourish rv d2" viewBox="0 0 280 24"><use href="#flourish"/></svg>
     </div>
+    <div class="postcard rv">
+      <div class="pc-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+          <circle cx="250" cy="256" r="80" fill="#fbe2a6" opacity=".2"/>
+          <circle cx="250" cy="256" r="46" fill="#fbe2a6"/>
+          <rect x="0" y="257" width="400" height="143" fill="#14295a"/>
+          <g stroke="#f6d796" stroke-width="2" opacity=".75"><path d="M222 268 H278 M230 278 H270 M236 288 H264 M242 298 H258"/></g>
+          <g fill="none" stroke="#3a5592" stroke-width="2"><path d="M0 322 q25 -10 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/><path d="M0 352 q25 -10 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/></g>
+          <g transform="translate(96 206)" fill="#0b1636">
+            <path d="M0 46 H64 L54 58 H10Z"/><path d="M30 44 V-30 L4 40Z"/><path d="M34 44 V-18 L58 40Z" opacity=".8"/>
+          </g>
+          <g fill="#0b1636"><rect x="300" y="250" width="100" height="6"/><rect x="310" y="256" width="4" height="22"/><rect x="340" y="256" width="4" height="22"/><rect x="370" y="256" width="4" height="22"/></g>
+          <g fill="none" stroke="#0b1636" stroke-width="2" opacity=".7"><path d="M250 120 q8 -8 16 0 q8 -8 16 0"/><path d="M300 150 q6 -6 12 0 q6 -6 12 0"/></g>
+        </svg>
+        <div class="script hello">Olá, mar<small>Fortaleza · Ceará</small></div>
+      </div>
+      <div class="pc-text">
+        <div class="postage"><svg viewBox="0 0 80 96" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="80" height="96" fill="#0d1b3e"/><rect x="0" y="0" width="80" height="96" fill="none" stroke="#fcf8f1" stroke-width="7" stroke-dasharray="0 8" stroke-linecap="round"/></svg><div><img src="assets/marca-30.webp" alt=""><span>NAVICTUR</span></div></div>
+        <svg class="postmark" viewBox="0 0 140 80"><use href="#postmark"/></svg>
+        <div class="caps">Local do encontro</div>
+        <h3 class="script" data-cfg="local"></h3>
+        <div class="addr" data-cfg="endereco"></div>
+        <div class="addr"><span data-cfg="dataTexto"></span> · <span data-cfg="horario"></span></div>
+        <a class="btn-line" id="mapsLink" target="_blank" rel="noopener">Como chegar <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BAGAGEM ================= -->
+<section class="sec bag-sec on-dark">
+  <div class="wrap">
+    <div class="head">
+      <div class="caps rv">Bagagem de mão</div>
+      <h2 class="rv d1">Para levar<span class="script">na sua mala</span></h2>
+      <svg class="flourish rv d2" viewBox="0 0 280 24" style="color:var(--gold-l)"><use href="#flourish"/></svg>
+    </div>
+    <div class="tags">
+      <div class="tagw rv"><div class="swing"><div class="string"></div><div class="tag"><span class="tag-in"></span><div class="n">I</div><h3>Look de treino</h3><p>Roupa confortável e tênis. Se quiser, leve uma troca para o café.</p><div class="bar"></div></div></div></div>
+      <div class="tagw rv d1"><div class="swing"><div class="string"></div><div class="tag"><span class="tag-in"></span><div class="n">II</div><h3>Essenciais</h3><p>Garrafinha de água, protetor solar e muita disposição.</p><div class="bar"></div></div></div></div>
+      <div class="tagw rv d2"><div class="swing"><div class="string"></div><div class="tag"><span class="tag-in"></span><div class="n">III</div><h3>Pontualidade</h3><p>Chegue alguns minutos antes para fazer o check-in com calma.</p><div class="bar"></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section class="sec" id="rsvp">
+  <div class="wrap">
+    <div class="head">
+      <div class="caps rv">Confirmação de presença</div>
+      <h2 class="rv d1">Confirme seu<span class="script">embarque</span></h2>
+      <p class="rv d2">Pedimos que confirme até <span data-cfg="prazoTexto"></span>.</p>
+    </div>
+    <div class="pass rv" id="pass">
+      <div class="pass-main">
+        <div class="pass-head"><img src="assets/marca-30.webp" alt="Navictur 30 anos"><span class="caps">Cartão de embarque</span></div>
+        <div class="route-line">
+          <div><b>NVT</b><small>Navictur</small></div>
+          <div class="dash"><svg viewBox="0 0 24 24"><use href="#i-plane"/></svg></div>
+          <div style="text-align:right"><b>MAR</b><small data-cfg="local"></small></div>
+        </div>
+        <form id="form" novalidate>
+          <div class="f"><label for="fNome">Nome da passageira</label><input id="fNome" name="nome" autocomplete="name" placeholder="Seu nome completo" required></div>
+          <div class="f"><span class="lab">Você vai embarcar?</span>
+            <div class="opts" role="radiogroup" aria-label="Presença">
+              <input type="radio" id="cSim" name="vai" value="sim"><label for="cSim">Sim, estarei lá</label>
+              <input type="radio" id="cNao" name="vai" value="nao"><label for="cNao">Não poderei ir</label>
+            </div>
+          </div>
+          <div class="two">
+            <div class="f"><label for="fRest">Restrição alimentar <span class="opt">opcional</span></label>
+              <select id="fRest" name="rest"><option value="">Nenhuma</option><option>Vegetariana</option><option>Vegana</option><option>Sem glúten</option><option>Sem lactose</option><option>Outra</option></select>
+            </div>
+            <div class="f"><label for="fMsg">Recado <span class="opt">opcional</span></label><textarea id="fMsg" name="msg" rows="1" placeholder="Uma palavra para a Navictur"></textarea></div>
+          </div>
+          <button class="btn" type="submit">Confirmar embarque</button>
+          <div class="err" id="err" role="alert"></div>
+        </form>
+      </div>
+      <aside class="pass-stub">
+        <div class="stub-head">NVT · 0030</div>
+        <div class="stub-body">
+          <div><small>Embarque</small><span data-cfg="horario"></span></div>
+          <div><small>Portão</small><span>Vista mar</span></div>
+          <div><small>Assento</small><span>VIP</span></div>
+        </div>
+        <div class="stub-bar"></div>
+      </aside>
+      <svg class="ok-stamp" viewBox="0 0 300 130" aria-hidden="true">
+        <use href="#st-ok"/>
+        <text id="okLine1" x="150" y="66" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="34" letter-spacing="5" fill="currentColor">CONFIRMADO</text>
+        <text id="okLine2" x="150" y="100" text-anchor="middle" font-family="Pinyon Script,cursive" font-size="27" fill="currentColor">embarque garantido</text>
+      </svg>
+    </div>
+    <p class="after" id="after">Abrimos o WhatsApp com a sua confirmação. É só tocar em <b>enviar</b>.<br>Não abriu? <a id="waAgain" target="_blank" rel="noopener">Toque aqui</a>.</p>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <span class="eyebrow">Passaporte Navictur · 30 anos juntos</span>
-    <img src="assets/logo-navictur-30.webp" alt="Navictur">
-  </div>
+  <img src="assets/marca-30.webp" alt="Navictur 30 anos">
+  <span class="caps">Navictur · 30 anos juntos</span>
+  <span class="script">obrigada por fazer parte da nossa história</span>
 </footer>
 
 <script>
 /* =====================================================
-   CONFIGURAÇÃO DO EVENTO — edite só aqui
+   CONFIGURAÇÃO DO EVENTO · edite só aqui
    ===================================================== */
 const CONFIG = {
-  dataEvento: "2026-11-07T07:00:00-03:00",      // data e hora (fuso de Fortaleza)
-  dataLonga:  "Sábado, 7 de novembro · 7h",
-  dataCurta:  "07 NOV 2026 · 07H00",
-  local:      "Restaurante Estaleiro",
-  endereco:   "Endereço completo · Fortaleza, CE",
-  mapsUrl:    "https://www.google.com/maps/search/?api=1&query=Restaurante+Estaleiro+Fortaleza",
-  whatsapp:   "5585999999999",                   // número que recebe as confirmações (só dígitos, com 55 + DDD)
-  prazo:      "31 de outubro",
-  roteiro: [
-    { hora: "7h00", titulo: "Check-in & boas-vindas", texto: "Recepção das convidadas com a vista do mar ao amanhecer.", portao: "Portão A" },
-    { hora: "7h20", titulo: "Treino Wolfit",          texto: "Uma aula para movimentar o corpo e começar o dia com energia.", portao: "Portão B" },
-    { hora: "8h30", titulo: "Café da manhã",          texto: "Brinde aos 30 anos com um café da manhã especial à beira-mar.", portao: "Portão C" }
-  ]
+  dataTexto:  "Data a definir",                    // ex.: "Sábado, 25 de outubro"
+  horario:    "07h30",
+  local:      "Estaleiro",
+  endereco:   "Rua Benedito Macêdo, 50 · Cais do Porto · Fortaleza",
+  mapsUrl:    "https://www.google.com/maps/search/?api=1&query=Estaleiro%2C%20Rua%20Benedito%20Mac%C3%AAdo%2C%2050%2C%20Cais%20do%20Porto%2C%20Fortaleza",
+  whatsapp:   "5585997080206",                     // recebe as confirmações (55 + DDD + número)
+  prazo:      "2026-10-17T23:59:59-03:00",         // fim do prazo de confirmação
+  prazoTexto: "17 de outubro"
 };
-CONFIG.cidadeData = CONFIG.dataLonga;
 
-/* ---------- Fill config ---------- */
+/* ---------- Preenche os textos ---------- */
 document.querySelectorAll("[data-cfg]").forEach(el => { el.textContent = CONFIG[el.dataset.cfg] ?? ""; });
 document.getElementById("mapsLink").href = CONFIG.mapsUrl;
 
 /* ---------- Personalização: ?nome=Maria ---------- */
-const params = new URLSearchParams(location.search);
-const guest = (params.get("nome") || params.get("para") || "").trim().slice(0, 40);
+const guest = (new URLSearchParams(location.search).get("nome") || "").trim().slice(0, 40);
 if (guest) {
-  document.getElementById("passName").textContent = guest;
-  document.getElementById("passName2").textContent = guest;
+  const first = guest.split(/\s+/)[0];
+  document.getElementById("guestName").textContent = guest;
   document.getElementById("fNome").value = guest;
+  document.getElementById("welcome").textContent = `${first}, você foi convidada`;
+  document.getElementById("dear").textContent = `Querida ${first},`;
 }
 
-/* ---------- Roteiro ---------- */
-const icons = [
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg>',
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12"/></svg>',
-  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 2 2 2 2 4M12 3c0 2 2 2 2 4"/></svg>'
-];
-document.getElementById("route").innerHTML = CONFIG.roteiro.map((r, i) => `
-  <div class="stop rv d${i}">
-    <span class="ico">${icons[i % icons.length]}</span>
-    <span class="n">0${i + 1}</span>
-    <span class="t">${r.hora}</span>
-    <h4>${r.titulo}</h4>
-    <p>${r.texto}</p>
-    <span class="gate">${r.portao.toUpperCase()}</span>
-  </div>`).join("");
+/* ---------- Guilloché (padrão de segurança de passaporte) ---------- */
+function guilloche(R, r, d, turns) {
+  const pts = [], steps = 1400;
+  for (let i = 0; i <= steps; i++) {
+    const t = (i / steps) * Math.PI * 2 * turns;
+    const x = (R - r) * Math.cos(t) + d * Math.cos(((R - r) / r) * t);
+    const y = (R - r) * Math.sin(t) - d * Math.sin(((R - r) / r) * t);
+    pts.push((200 + x).toFixed(1) + "," + (200 + y).toFixed(1));
+  }
+  return "M" + pts.join("L");
+}
+const G = [guilloche(150, 52, 70, 13), guilloche(120, 33, 60, 33), guilloche(180, 63, 40, 21), guilloche(64, 17, 34, 17)];
+document.querySelectorAll("[data-guilloche]").forEach(svg => {
+  const dark = svg.dataset.guilloche === "dark";
+  svg.setAttribute("viewBox", "0 0 400 400");
+  svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
+  svg.setAttribute("aria-hidden", "true");
+  svg.innerHTML = G.map((d, i) => `<path d="${d}" fill="none" stroke="${dark ? "#ecd38a" : (i === 1 ? "#9fb1d8" : "#d8bf8a")}" stroke-width=".45" opacity="${dark ? .5 : .55}"/>`).join("");
+});
 
-/* ---------- Intro / abrir envelope ---------- */
-const intro = document.getElementById("intro");
-const stage = document.getElementById("envStage");
+/* ---------- Partículas e estrelas ---------- */
+const dust = document.getElementById("dust");
+for (let i = 0; i < 26; i++) {
+  const s = document.createElement("i");
+  s.style.left = Math.random() * 100 + "%"; s.style.top = 40 + Math.random() * 60 + "%";
+  s.style.animationDelay = (-Math.random() * 7) + "s"; s.style.animationDuration = (5 + Math.random() * 5) + "s";
+  dust.appendChild(s);
+}
+const stars = document.getElementById("stars");
+for (let i = 0; i < 60; i++) {
+  const s = document.createElement("i");
+  s.style.left = Math.random() * 100 + "%"; s.style.top = Math.random() * 70 + "%";
+  s.style.animationDelay = (-Math.random() * 3) + "s"; s.style.opacity = (.2 + Math.random() * .6).toFixed(2);
+  stars.appendChild(s);
+}
+
+/* ---------- Abrir o passaporte ---------- */
+const intro = document.getElementById("intro"), book = document.getElementById("book");
 let opened = false;
-function openInvite() {
+function openPassport() {
   if (opened) return; opened = true;
   intro.classList.add("open");
-  setTimeout(() => intro.classList.add("rise"), 750);
-  setTimeout(() => intro.classList.add("zoom"), 1800);
+  setTimeout(() => intro.classList.add("zoom"), 2300);
   setTimeout(() => {
     intro.classList.add("gone");
     document.body.classList.remove("locked");
-    revealHero();
-  }, 2500);
-  setTimeout(() => { intro.style.display = "none"; }, 3700);
+    startPage();
+  }, 2900);
+  setTimeout(() => { intro.style.display = "none"; }, 4300);
 }
-stage.addEventListener("click", openInvite);
-stage.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openInvite(); } });
+book.addEventListener("click", openPassport);
+document.getElementById("tap").addEventListener("click", openPassport);
+book.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPassport(); } });
 
-/* ---------- Reveal on scroll ---------- */
+/* ---------- Revelar ao rolar ---------- */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-}, { threshold: .18, rootMargin: "0px 0px -6% 0px" });
-function revealHero() {
+}, { threshold: .2, rootMargin: "0px 0px -8% 0px" });
+function startPage() {
+  const hero = document.getElementById("hero");
+  requestAnimationFrame(() => hero.classList.add("risen"));
   document.querySelectorAll(".rv").forEach(el => {
-    if (el.closest(".hero")) setTimeout(() => el.classList.add("in"), 150);
+    if (el.closest(".hero")) setTimeout(() => el.classList.add("in"), 200);
     else io.observe(el);
   });
 }
 
-/* ---------- Countdown (split-flap) ---------- */
-const target = new Date(CONFIG.dataEvento).getTime();
-const cells = {};
-document.querySelectorAll(".digits").forEach(d => cells[d.dataset.u] = d);
-function setDigits(el, str) {
-  if (el.children.length !== str.length) el.innerHTML = [...str].map(c => `<span class="flap">${c}</span>`).join("");
-  [...str].forEach((c, i) => {
-    const f = el.children[i];
-    if (f.textContent !== c) { f.textContent = c; f.classList.remove("flip"); void f.offsetWidth; f.classList.add("flip"); }
-  });
+/* ---------- Rota que se desenha com a rolagem ---------- */
+const route = document.getElementById("route");
+function onScroll() {
+  const r = route.getBoundingClientRect(), vh = innerHeight;
+  const p = Math.min(1, Math.max(0, (vh * .6 - r.top) / r.height));
+  route.style.setProperty("--p", p.toFixed(4));
 }
+addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll); onScroll();
+
+/* ---------- Contagem até o fim das confirmações ---------- */
+const deadline = new Date(CONFIG.prazo).getTime();
+const units = {}; document.querySelectorAll("[data-u]").forEach(b => units[b.dataset.u] = b);
+function setU(el, v) { if (el.textContent !== v) { el.textContent = v; el.classList.remove("tick"); void el.offsetWidth; el.classList.add("tick"); } }
+let timer;
 function tick() {
-  let diff = Math.max(0, target - Date.now());
+  let diff = deadline - Date.now();
+  if (diff <= 0) {
+    ["d", "h", "m", "s"].forEach(k => setU(units[k], "00"));
+    document.getElementById("callNote").textContent = "O prazo de confirmação terminou. Fale com a gente pelo WhatsApp.";
+    clearInterval(timer);
+    return;
+  }
   const d = Math.floor(diff / 864e5); diff -= d * 864e5;
   const h = Math.floor(diff / 36e5);  diff -= h * 36e5;
   const m = Math.floor(diff / 6e4);   diff -= m * 6e4;
   const s = Math.floor(diff / 1e3);
-  setDigits(cells.d, String(d).padStart(2, "0"));
-  setDigits(cells.h, String(h).padStart(2, "0"));
-  setDigits(cells.m, String(m).padStart(2, "0"));
-  setDigits(cells.s, String(s).padStart(2, "0"));
+  setU(units.d, String(d).padStart(2, "0")); setU(units.h, String(h).padStart(2, "0"));
+  setU(units.m, String(m).padStart(2, "0")); setU(units.s, String(s).padStart(2, "0"));
 }
-tick(); setInterval(tick, 1000);
+timer = setInterval(tick, 1000); tick();
 
-/* ---------- RSVP via WhatsApp ---------- */
+/* ---------- Confirmação via WhatsApp ---------- */
 const form = document.getElementById("form");
 form.addEventListener("submit", e => {
   e.preventDefault();
   const data = new FormData(form);
-  const nome = (data.get("nome") || "").trim();
-  const vai = data.get("vai");
-  const err = document.getElementById("err");
-  if (!nome) { err.textContent = "Informe seu nome para emitirmos o cartão de embarque."; return; }
-  if (!vai) { err.textContent = "Escolha se você vai embarcar com a gente."; return; }
+  const nome = (data.get("nome") || "").trim(), vai = data.get("vai"), err = document.getElementById("err");
+  if (!nome) { err.textContent = "Escreva seu nome para emitirmos o seu cartão de embarque."; return; }
+  if (!vai) { err.textContent = "Conte pra gente se você vai embarcar."; return; }
   err.textContent = "";
-  const linhas = [
-    vai === "sim" ? "✈️ *Embarque confirmado!* Navictur 30 anos" : "Navictur 30 anos: não poderei ir 💛",
+  const msg = [
+    vai === "sim" ? "✈️ *Embarque confirmado!* Navictur 30 anos" : "Navictur 30 anos · infelizmente não poderei ir 💛",
     `Nome: ${nome}`,
-    data.get("tel") ? `WhatsApp: ${data.get("tel")}` : "",
     vai === "sim" && data.get("rest") ? `Restrição alimentar: ${data.get("rest")}` : "",
-    data.get("msg") ? `Mensagem: ${data.get("msg")}` : ""
-  ].filter(Boolean);
-  const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(linhas.join("\n"))}`;
+    data.get("msg") ? `Recado: ${data.get("msg")}` : ""
+  ].filter(Boolean).join("\n");
+  const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
   document.getElementById("waAgain").href = url;
   if (vai === "nao") {
-    document.getElementById("doneTitle").textContent = "Sentiremos sua falta!";
+    document.getElementById("okLine1").textContent = "ATÉ BREVE";
+    document.getElementById("okLine2").textContent = "sentiremos sua falta";
   }
-  form.style.display = "none";
-  document.getElementById("done").classList.add("show");
+  document.getElementById("pass").classList.add("done");
+  document.getElementById("after").classList.add("show");
 });
 </script>
 </body>
